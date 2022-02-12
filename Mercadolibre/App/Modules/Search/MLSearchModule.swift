@@ -14,7 +14,10 @@ class MLSearchModule {
     
     private init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        view = MLSearchViewController()
+        let presenter = MLSearchPresenter()
+        let interactor = MLSearchInteractor(presenter: presenter)
+        view = MLSearchViewController(interactor: interactor)
+        presenter.viewController = view
     }
     
     static func setup(with navigationController: UINavigationController) -> MLSearchModule {

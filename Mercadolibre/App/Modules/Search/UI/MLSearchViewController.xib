@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -44,13 +45,21 @@
                         <constraint firstAttribute="trailing" secondItem="xbU-lw-GWW" secondAttribute="trailing" constant="16" id="ygn-Ww-NLA"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YoE-cW-mrD">
+                    <rect key="frame" x="0.0" y="150" width="414" height="712"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="LightGray"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YoE-cW-mrD" secondAttribute="trailing" id="9ke-zY-F5L"/>
+                <constraint firstItem="YoE-cW-mrD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CrH-1E-caK"/>
                 <constraint firstItem="gyc-cb-KJp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="JC6-T9-s7l"/>
+                <constraint firstItem="YoE-cW-mrD" firstAttribute="top" secondItem="tni-u3-2xj" secondAttribute="bottom" id="KQK-a3-iIj"/>
                 <constraint firstItem="tni-u3-2xj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OJo-kA-Vgt"/>
                 <constraint firstItem="tni-u3-2xj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dAZ-L2-Abu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YoE-cW-mrD" secondAttribute="bottom" id="pnr-pR-qGU"/>
                 <constraint firstItem="tni-u3-2xj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vr3-np-jgM"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
@@ -63,5 +72,8 @@
         <namedColor name="Yellow">
             <color red="1" green="0.84313725490196079" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
