@@ -27,3 +27,5 @@ class SearchItemSuccess: SearchItem {
         super.init()
     }
 }
+
+class SearchItemLoading: SearchItem {}

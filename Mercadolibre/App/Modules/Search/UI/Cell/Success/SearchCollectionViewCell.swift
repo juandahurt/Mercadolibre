@@ -11,11 +11,6 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     func setViewModel(_ viewModel: SearchViewModel) {
         titleLabel.text = viewModel.item.title

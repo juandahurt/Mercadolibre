@@ -6,7 +6,7 @@ target 'Mercadolibre' do
   use_frameworks!
 
   pod 'RxSwift' 
-  pod 'RxCocoa' 
+  pod 'RxCocoa'
 
   target 'MercadolibreTests' do
     inherit! :search_paths

@@ -24,11 +24,13 @@ class MLSearchInteractor: MLSearchBussinessLogic {
     }
     
     func search(_ text: String) {
+        presenter.showLoading()
         worker.fetchItems(from: text)
             .subscribe(onSuccess: { [weak self] items in
                 guard let self = self else { return }
-                
-                self.presenter.showSearchResult(items: items)
+                DispatchQueue.main.async {
+                    self.presenter.showSearchResult(items: items)
+                }
             }, onFailure: { [weak self] error in
                 guard let self = self else { return }
                 

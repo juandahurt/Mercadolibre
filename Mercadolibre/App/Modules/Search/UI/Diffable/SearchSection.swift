@@ -9,6 +9,11 @@ import Foundation
 
 class SearchSection: Hashable {
     var id: String = UUID().uuidString
+    var items: [SearchItem]
+    
+    init(items: [SearchItem]) {
+        self.items = items
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

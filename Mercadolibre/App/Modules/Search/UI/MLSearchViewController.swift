@@ -72,10 +72,13 @@ extension MLSearchViewController {
         
         return DataSource(
             collectionView: _collectionView) { collectionView, indexPath, item in
-                // TODO: Create loading cell
                 if let item = item as? SearchItemSuccess {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as? SearchCollectionViewCell
                     cell?.setViewModel(item.viewModel)
+                    return cell
+                }
+                if let _ = item as? SearchItemLoading {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as? SearchCollectionViewCell
                     return cell
                 }
                 
@@ -84,7 +87,7 @@ extension MLSearchViewController {
     }
     
     private func _setupLayout() {
-        _collectionView.collectionViewLayout =  UICollectionViewCompositionalLayout(sectionProvider: { sectionIndexColor, layoutEnvironment in
+        _collectionView.collectionViewLayout =  UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
             let size = NSCollectionLayoutSize(
                 widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
                 heightDimension: NSCollectionLayoutDimension.absolute(130)
@@ -96,11 +99,12 @@ extension MLSearchViewController {
         })
     }
     
-    func applySnapshot(items: [SearchItem]) {
-        let section = SearchSection()
+    func applySnapshot(sections: [SearchSection]) {
         var snapshot = Snapshot()
-        snapshot.appendSections([section])
-        snapshot.appendItems(items, toSection: section)
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.items, toSection: section)
+        }
         _dataSource.apply(snapshot)
     }
 }
