@@ -100,7 +100,7 @@ extension MLSearchViewController {
         _collectionView.collectionViewLayout =  UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
             let size = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
-                heightDimension: sectionIndex == 0 ? .absolute(150) : .fractionalHeight(1)
+                heightDimension: sectionIndex == 0 ? .absolute(160) : .fractionalHeight(1)
             )
             let item = NSCollectionLayoutItem(layoutSize: size)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
