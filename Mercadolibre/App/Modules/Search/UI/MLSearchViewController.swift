@@ -67,18 +67,21 @@ class MLSearchViewController: UIViewController {
 // MARK: - Layout
 extension MLSearchViewController {
     private func _createDataSource() -> DataSource {
-        let id = String(describing: SearchCollectionViewCell.self)
-        _collectionView.register(UINib(nibName: id, bundle: nil), forCellWithReuseIdentifier: id)
+        let successId = String(describing: SearchCollectionViewCell.self)
+        _collectionView.register(UINib(nibName: successId, bundle: nil), forCellWithReuseIdentifier: successId)
+        
+        let loadingId = String(describing: SearchLoadingCollectionViewCell.self)
+        _collectionView.register(UINib(nibName: loadingId, bundle: nil), forCellWithReuseIdentifier: loadingId)
         
         return DataSource(
             collectionView: _collectionView) { collectionView, indexPath, item in
                 if let item = item as? SearchItemSuccess {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as? SearchCollectionViewCell
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: successId, for: indexPath) as? SearchCollectionViewCell
                     cell?.setViewModel(item.viewModel)
                     return cell
                 }
                 if let _ = item as? SearchItemLoading {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as? SearchCollectionViewCell
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadingId, for: indexPath) as? SearchLoadingCollectionViewCell
                     return cell
                 }
                 
@@ -89,8 +92,8 @@ extension MLSearchViewController {
     private func _setupLayout() {
         _collectionView.collectionViewLayout =  UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
             let size = NSCollectionLayoutSize(
-                widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
-                heightDimension: NSCollectionLayoutDimension.absolute(130)
+                widthDimension: .fractionalWidth(1),
+                heightDimension: sectionIndex == 0 ? .absolute(130) : .fractionalHeight(1)
             )
             let item = NSCollectionLayoutItem(layoutSize: size)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)

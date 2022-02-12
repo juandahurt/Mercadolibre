@@ -18,6 +18,11 @@ class MLSearchPresenter: MLSearchPresentationLogic {
     
     func showLoading() {
         // TODO: Send loading item (?)
+        let sections = [
+            SearchSection(items: []),
+            SearchSection(items: [SearchItemLoading()])
+        ]
+        viewController?.applySnapshot(sections: sections)
     }
     
     func showSearchResult(items: [Item]) {

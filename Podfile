@@ -5,6 +5,7 @@ target 'Mercadolibre' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'NVActivityIndicatorView'
   pod 'RxSwift' 
   pod 'RxCocoa'
 
