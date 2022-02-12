@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MLSearchViewController" customModule="Mercadolibre" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBarView" destination="gyc-cb-KJp" id="rPa-nV-Wmi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tni-u3-2xj">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xbU-lw-GWW">
+                            <rect key="frame" x="16" y="74" width="382" height="40"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" placeholder="Buscar en Mercado Libre" translatesAutoresizingMaskIntoConstraints="NO" id="gyc-cb-KJp">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="enp-RC-QtX"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="Yellow"/>
+                    <constraints>
+                        <constraint firstItem="xbU-lw-GWW" firstAttribute="leading" secondItem="tni-u3-2xj" secondAttribute="leading" constant="16" id="iM1-gT-ce7"/>
+                        <constraint firstAttribute="height" constant="150" id="ydG-NP-D9n"/>
+                        <constraint firstAttribute="trailing" secondItem="xbU-lw-GWW" secondAttribute="trailing" constant="16" id="ygn-Ww-NLA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="LightGray"/>
+            <constraints>
+                <constraint firstItem="gyc-cb-KJp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="JC6-T9-s7l"/>
+                <constraint firstItem="tni-u3-2xj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OJo-kA-Vgt"/>
+                <constraint firstItem="tni-u3-2xj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dAZ-L2-Abu"/>
+                <constraint firstItem="tni-u3-2xj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vr3-np-jgM"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="LightGray">
+            <color red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Yellow">
+            <color red="1" green="0.84313725490196079" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
