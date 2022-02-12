@@ -8,14 +8,27 @@
 import Foundation
 
 class NetworkManager {
-    private let baseUrl: String
+    private let _baseUrl: String
+    private static var _instance: NetworkManager?
     
     init(baseUrl: String) {
-        self.baseUrl = baseUrl
+        self._baseUrl = baseUrl
+    }
+    
+    static func provideBaseUrl(_ baseUrl: String) {
+        _instance = NetworkManager(baseUrl: baseUrl)
+    }
+    
+    static func sharedInstance() throws -> NetworkManager {
+        if _instance != nil {
+            return _instance!
+        } else {
+            throw NetworkError.baseUrlNotProvided
+        }
     }
     
     func request(method: NetworkMethod = .get, path: String = "", params: [String: Any]? = nil, completion: @escaping (Data?, Error?) -> Void) {
-        guard let url = URL(string: baseUrl + path) else {
+        guard let url = URL(string: _baseUrl + path) else {
             completion(nil, NetworkError.malformedUrl)
             return
         }

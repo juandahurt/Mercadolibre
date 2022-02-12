@@ -19,4 +19,23 @@ class NetworkTests: XCTestCase {
             }
         }
     }
+    
+    func test_base_url_not_provided() {
+        do {
+            _ = try NetworkManager.sharedInstance()
+        } catch NetworkError.baseUrlNotProvided {
+            
+        } catch {
+            XCTFail("Wrong error thrown!")
+        }
+    }
+    
+    func test_base_url_provided() {
+        NetworkManager.provideBaseUrl("")
+        do {
+            _ = try NetworkManager.sharedInstance()
+        } catch {
+            XCTFail("Should not throw!")
+        }
+    }
 }
