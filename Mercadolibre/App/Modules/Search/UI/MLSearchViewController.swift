@@ -76,6 +76,9 @@ extension MLSearchViewController {
         let emptyId = String(describing: SearchEmptyCollectionViewCell.self)
         _collectionView.register(UINib(nibName: emptyId, bundle: nil), forCellWithReuseIdentifier: emptyId)
         
+        let errorId = String(describing: SearchErrorCollectionViewCell.self)
+        _collectionView.register(UINib(nibName: errorId, bundle: nil), forCellWithReuseIdentifier: errorId)
+        
         return DataSource(
             collectionView: _collectionView) { collectionView, indexPath, item in
                 if let item = item as? SearchItemSuccess {
@@ -89,6 +92,10 @@ extension MLSearchViewController {
                 }
                 if item is SearchEmptyItem {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyId, for: indexPath) as! SearchEmptyCollectionViewCell
+                    return cell
+                }
+                if item is SearchErrorItem {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: errorId, for: indexPath)
                     return cell
                 }
                 

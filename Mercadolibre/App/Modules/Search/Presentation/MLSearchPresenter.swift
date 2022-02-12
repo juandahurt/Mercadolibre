@@ -38,7 +38,10 @@ class MLSearchPresenter: MLSearchPresentationLogic {
     }
     
     func showError(error: Error) {
-        // TODO: Show error
+        let sections = [
+            SearchSection(items: [SearchErrorItem()]),
+        ]
+        viewController?.applySnapshot(sections: sections)
     }
 }
 
