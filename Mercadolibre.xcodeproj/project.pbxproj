@@ -22,6 +22,8 @@
 		2F56212C27B7FDAA0076F42B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56212B27B7FDAA0076F42B /* NetworkManager.swift */; };
 		2F56212E27B7FDDC0076F42B /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56212D27B7FDDC0076F42B /* NetworkMethod.swift */; };
 		2F56213127B7FF2D0076F42B /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213027B7FF2D0076F42B /* NetworkTests.swift */; };
+		2F56213427B800D00076F42B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213327B800D00076F42B /* Constants.swift */; };
+		2F56213627B80B8D0076F42B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213527B80B8D0076F42B /* SearchResult.swift */; };
 		2F805FAA27B73B1F00D5477D /* MLSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F805FA927B73B1F00D5477D /* MLSearchInteractor.swift */; };
 		2F805FAD27B73BE600D5477D /* MLSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F805FAC27B73BE600D5477D /* MLSearchPresenter.swift */; };
 		2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */; };
@@ -58,6 +60,8 @@
 		2F56212B27B7FDAA0076F42B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2F56212D27B7FDDC0076F42B /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		2F56213027B7FF2D0076F42B /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		2F56213327B800D00076F42B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2F56213527B80B8D0076F42B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		2F805FA927B73B1F00D5477D /* MLSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchInteractor.swift; sourceTree = "<group>"; };
 		2F805FAC27B73BE600D5477D /* MLSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchPresenter.swift; sourceTree = "<group>"; };
 		2FAF89BD27B729CE00756C98 /* MercadolibreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadolibreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				2F47C8CB27B7F1EB0071212B /* Item.swift */,
+				2F56213527B80B8D0076F42B /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 		2F4F6CFB27B7235F000AB7C6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2F56213227B800BA0076F42B /* Common */,
 				2F56212827B7FD7C0076F42B /* Network */,
 				2FAF89D227B72EAE00756C98 /* Assets */,
 				2FAF89CB27B72CC800756C98 /* Modules */,
@@ -194,6 +200,14 @@
 				2F56213027B7FF2D0076F42B /* NetworkTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2F56213227B800BA0076F42B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2F56213327B800D00076F42B /* Constants.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		2F805FA827B73B0000D5477D /* Logic */ = {
@@ -469,12 +483,14 @@
 				2F4F6D1D27B7299A000AB7C6 /* MLLogLevel.swift in Sources */,
 				2F4F6D1E27B7299A000AB7C6 /* MLLogModifier.swift in Sources */,
 				2F56212C27B7FDAA0076F42B /* NetworkManager.swift in Sources */,
+				2F56213427B800D00076F42B /* Constants.swift in Sources */,
 				2FAF89D427B72FDF00756C98 /* MLSearchModule.swift in Sources */,
 				2F47C8CC27B7F1EB0071212B /* Item.swift in Sources */,
 				2F4F6D1F27B7299A000AB7C6 /* MLLogger.swift in Sources */,
 				2F805FAA27B73B1F00D5477D /* MLSearchInteractor.swift in Sources */,
 				2F805FAD27B73BE600D5477D /* MLSearchPresenter.swift in Sources */,
 				2FAF89D027B72D0900756C98 /* MLSearchViewController.swift in Sources */,
+				2F56213627B80B8D0076F42B /* SearchResult.swift in Sources */,
 				2F56212A27B7FD860076F42B /* NetworkError.swift in Sources */,
 				2F4F6CEA27B72010000AB7C6 /* SceneDelegate.swift in Sources */,
 				2F47C8C727B7F0D30071212B /* MLSearchNetworkWorker.swift in Sources */,
