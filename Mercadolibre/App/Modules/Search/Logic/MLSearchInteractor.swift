@@ -33,8 +33,9 @@ class MLSearchInteractor: MLSearchBussinessLogic {
                 }
             }, onFailure: { [weak self] error in
                 guard let self = self else { return }
-                
-                self.presenter.showError(error: error)
+                DispatchQueue.main.async {
+                    self.presenter.showError(error: error)
+                }
             }).disposed(by: disposeBag)
     }
 }
