@@ -19,7 +19,14 @@ class MLSearchNetworkWorker: MLSearchWorker {
         return Single.create { single in
             let disposable = Disposables.create()
             
-            let manager = NetworkManager(baseUrl: ApiService.baseUrl)
+            let manager: NetworkManager
+            do {
+                manager = try NetworkManager.sharedInstance()
+            } catch {
+                single(.failure(error))
+                return disposable
+            }
+            
             manager.request(path: ApiService.search, params: ["q": query]) { data, error in
                 if let error = error {
                     single(.failure(error))
