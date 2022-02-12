@@ -15,7 +15,8 @@ class MLSearchModule {
     private init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         let presenter = MLSearchPresenter()
-        let interactor = MLSearchInteractor(presenter: presenter)
+        let worker = MLSearchNetworkWorker()
+        let interactor = MLSearchInteractor(presenter: presenter, worker: worker)
         view = MLSearchViewController(interactor: interactor)
         presenter.viewController = view
     }

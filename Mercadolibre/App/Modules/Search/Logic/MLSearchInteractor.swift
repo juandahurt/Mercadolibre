@@ -6,23 +6,33 @@
 //
 
 import Foundation
-
+import RxSwift
 
 protocol MLSearchBussinessLogic {
     func search(_ text: String)
 }
 
 class MLSearchInteractor: MLSearchBussinessLogic {
-    var presenter: MLSearchPresentationLogic
+    private let presenter: MLSearchPresentationLogic
+    private let worker: MLSearchWorker
     
-    init(presenter: MLSearchPresentationLogic) {
+    private let disposeBag = DisposeBag()
+    
+    init(presenter: MLSearchPresentationLogic, worker: MLSearchWorker) {
         self.presenter = presenter
+        self.worker = worker
     }
     
     func search(_ text: String) {
-        // TODO: Call the network worker
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.presenter.showSearchResult(items: [])
-        }
+        worker.fetchItems(from: text)
+            .subscribe(onSuccess: { [weak self] items in
+                guard let self = self else { return }
+                
+                self.presenter.showSearchResult(items: items)
+            }, onFailure: { [weak self] error in
+                guard let self = self else { return }
+                
+                self.presenter.showError(error: error)
+            }).disposed(by: disposeBag)
     }
 }

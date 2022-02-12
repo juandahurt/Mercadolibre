@@ -6,7 +6,15 @@
 //
 
 import Foundation
+import RxSwift
 
-class MLSearchNetwtorkWorker {
-    // TODO: Create network layer
+protocol MLSearchWorker {
+    func fetchItems(from query: String) -> Single<[Item]>
+}
+
+class MLSearchNetworkWorker: MLSearchWorker {
+    func fetchItems(from query: String) -> Single<[Item]> {
+        MLLogger.instance.log("Searching query: '\(query)'", level: .debug)
+        return Single.just([])
+    }
 }

@@ -256,7 +256,6 @@
 				CFC8682C4FCB7E9ADD1A417E /* Pods-MercadolibreTests.debug.xcconfig */,
 				D7224B2673222A98DFF82B21 /* Pods-MercadolibreTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

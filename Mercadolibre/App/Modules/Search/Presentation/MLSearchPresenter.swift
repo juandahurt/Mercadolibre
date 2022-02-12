@@ -9,18 +9,18 @@ import Foundation
 
 protocol MLSearchPresentationLogic {
     func showSearchResult(items: [Item])
-    func showError()
+    func showError(error: Error)
 }
 
 class MLSearchPresenter: MLSearchPresentationLogic {
     weak var viewController: MLSearchViewController?
     
     func showSearchResult(items: [Item]) {
-        print(items)
+        // TODO: Update view controller
     }
     
-    func showError() {
-        
+    func showError(error: Error) {
+        // TODO: Show error
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 
 class MLLogger {
-    static let instance = MLLogger()
+    static let instance = MLLogger(modifiers: [EmojiLogModifier()])
     
     let modifiers: [MLLogModifier]
     
