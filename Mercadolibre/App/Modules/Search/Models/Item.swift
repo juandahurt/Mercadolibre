@@ -9,4 +9,6 @@ import Foundation
 
 struct Item: Decodable {
     var id: String
+    var title: String
+    var thumbnail: String
 }

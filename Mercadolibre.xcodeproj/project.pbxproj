@@ -24,6 +24,10 @@
 		2F56213127B7FF2D0076F42B /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213027B7FF2D0076F42B /* NetworkTests.swift */; };
 		2F56213427B800D00076F42B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213327B800D00076F42B /* Constants.swift */; };
 		2F56213627B80B8D0076F42B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213527B80B8D0076F42B /* SearchResult.swift */; };
+		2F56213E27B80FA50076F42B /* SearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213D27B80FA50076F42B /* SearchSection.swift */; };
+		2F56214027B80FC20076F42B /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56213F27B80FC20076F42B /* SearchItem.swift */; };
+		2F56214327B812C10076F42B /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F56214127B812C10076F42B /* SearchCollectionViewCell.swift */; };
+		2F56214427B812C10076F42B /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F56214227B812C10076F42B /* SearchCollectionViewCell.xib */; };
 		2F805FAA27B73B1F00D5477D /* MLSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F805FA927B73B1F00D5477D /* MLSearchInteractor.swift */; };
 		2F805FAD27B73BE600D5477D /* MLSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F805FAC27B73BE600D5477D /* MLSearchPresenter.swift */; };
 		2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */; };
@@ -62,6 +66,10 @@
 		2F56213027B7FF2D0076F42B /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		2F56213327B800D00076F42B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2F56213527B80B8D0076F42B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		2F56213D27B80FA50076F42B /* SearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSection.swift; sourceTree = "<group>"; };
+		2F56213F27B80FC20076F42B /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
+		2F56214127B812C10076F42B /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F56214227B812C10076F42B /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F805FA927B73B1F00D5477D /* MLSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchInteractor.swift; sourceTree = "<group>"; };
 		2F805FAC27B73BE600D5477D /* MLSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchPresenter.swift; sourceTree = "<group>"; };
 		2FAF89BD27B729CE00756C98 /* MercadolibreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadolibreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +218,24 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		2F56213727B80EF80076F42B /* Diffable */ = {
+			isa = PBXGroup;
+			children = (
+				2F56213D27B80FA50076F42B /* SearchSection.swift */,
+				2F56213F27B80FC20076F42B /* SearchItem.swift */,
+			);
+			path = Diffable;
+			sourceTree = "<group>";
+		};
+		2F56213827B80F120076F42B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2F56214127B812C10076F42B /* SearchCollectionViewCell.swift */,
+				2F56214227B812C10076F42B /* SearchCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2F805FA827B73B0000D5477D /* Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +302,8 @@
 		2FAF89CD27B72CE700756C98 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2F56213827B80F120076F42B /* Cell */,
+				2F56213727B80EF80076F42B /* Diffable */,
 				2FAF89CE27B72D0900756C98 /* MLSearchViewController.swift */,
 				2FAF89CF27B72D0900756C98 /* MLSearchViewController.xib */,
 			);
@@ -396,6 +424,7 @@
 			files = (
 				2F4F6CF427B72011000AB7C6 /* LaunchScreen.storyboard in Resources */,
 				2FAF89D127B72D0900756C98 /* MLSearchViewController.xib in Resources */,
+				2F56214427B812C10076F42B /* SearchCollectionViewCell.xib in Resources */,
 				2F4F6CF127B72011000AB7C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,8 +512,10 @@
 				2F4F6D1D27B7299A000AB7C6 /* MLLogLevel.swift in Sources */,
 				2F4F6D1E27B7299A000AB7C6 /* MLLogModifier.swift in Sources */,
 				2F56212C27B7FDAA0076F42B /* NetworkManager.swift in Sources */,
+				2F56213E27B80FA50076F42B /* SearchSection.swift in Sources */,
 				2F56213427B800D00076F42B /* Constants.swift in Sources */,
 				2FAF89D427B72FDF00756C98 /* MLSearchModule.swift in Sources */,
+				2F56214027B80FC20076F42B /* SearchItem.swift in Sources */,
 				2F47C8CC27B7F1EB0071212B /* Item.swift in Sources */,
 				2F4F6D1F27B7299A000AB7C6 /* MLLogger.swift in Sources */,
 				2F805FAA27B73B1F00D5477D /* MLSearchInteractor.swift in Sources */,
@@ -493,6 +524,7 @@
 				2F56213627B80B8D0076F42B /* SearchResult.swift in Sources */,
 				2F56212A27B7FD860076F42B /* NetworkError.swift in Sources */,
 				2F4F6CEA27B72010000AB7C6 /* SceneDelegate.swift in Sources */,
+				2F56214327B812C10076F42B /* SearchCollectionViewCell.swift in Sources */,
 				2F47C8C727B7F0D30071212B /* MLSearchNetworkWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
