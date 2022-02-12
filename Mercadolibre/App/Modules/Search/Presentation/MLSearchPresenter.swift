@@ -16,7 +16,7 @@ class MLSearchPresenter: MLSearchPresentationLogic {
     weak var viewController: MLSearchViewController?
     
     func showSearchResult(items: [Item]) {
-        let items = items.map({ SearchItemSuccess(data: $0) })
+        let items = items.map({ SearchItemSuccess(viewModel: MLSearchViewModel(item: $0)) })
         viewController?.applySnapshot(items: items)
     }
     

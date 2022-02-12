@@ -20,10 +20,10 @@ class SearchItem: Hashable {
 }
 
 class SearchItemSuccess: SearchItem {
-    let data: Item
+    let viewModel: SearchViewModel
     
-    init(data: Item) {
-        self.data = data
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
         super.init()
     }
 }

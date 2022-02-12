@@ -75,7 +75,7 @@ extension MLSearchViewController {
                 // TODO: Create loading cell
                 if let item = item as? SearchItemSuccess {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: id, for: indexPath) as? SearchCollectionViewCell
-                    cell?.setData(item.data)
+                    cell?.setViewModel(item.viewModel)
                     return cell
                 }
                 

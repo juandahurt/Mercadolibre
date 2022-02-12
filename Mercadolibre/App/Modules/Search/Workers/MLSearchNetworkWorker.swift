@@ -32,6 +32,7 @@ class MLSearchNetworkWorker: MLSearchWorker {
                         let result = try decoder.decode(SearchResult.self, from: data)
                         single(.success(result.results))
                     } catch {
+                        MLLogger.instance.log("worker error: \(error.localizedDescription)", level: .debug)
                         single(.failure(error))
                     }
                     return

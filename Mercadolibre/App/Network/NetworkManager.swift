@@ -38,6 +38,7 @@ class NetworkManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(nil, error)
+                MLLogger.instance.log("network manager: unknown error: \(error.localizedDescription)", level: .debug)
                 return
             }
             
