@@ -17,7 +17,6 @@ class MLSearchPresenter: MLSearchPresentationLogic {
     weak var viewController: MLSearchViewController?
     
     func showLoading() {
-        // TODO: Send loading item (?)
         let sections = [
             SearchSection(items: []),
             SearchSection(items: [SearchItemLoading()])
@@ -26,9 +25,16 @@ class MLSearchPresenter: MLSearchPresentationLogic {
     }
     
     func showSearchResult(items: [Item]) {
-        let items = items.map({ SearchItemSuccess(viewModel: MLSearchViewModel(item: $0)) })
-        let section = SearchSection(items: items)
-        viewController?.applySnapshot(sections: [section])
+        if items.isEmpty {
+            let sections = [
+                SearchSection(items: [SearchEmptyItem()]),
+            ]
+            viewController?.applySnapshot(sections: sections)
+        } else {
+            let items = items.map({ SearchItemSuccess(viewModel: MLSearchViewModel(item: $0)) })
+            let section = SearchSection(items: items)
+            viewController?.applySnapshot(sections: [section])
+        }
     }
     
     func showError(error: Error) {

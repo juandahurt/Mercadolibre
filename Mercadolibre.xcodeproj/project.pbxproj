@@ -11,6 +11,8 @@
 		2EAA589CD40D77A9984E6F27 /* Pods_MercadolibreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB938BC7C1350DFD56E14 /* Pods_MercadolibreTests.framework */; };
 		2F26F3BE27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26F3BC27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift */; };
 		2F26F3BF27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */; };
+		2F26F3C327B838A700982FFC /* SearchEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */; };
+		2F26F3C427B838A700982FFC /* SearchEmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F26F3C227B838A700982FFC /* SearchEmptyCollectionViewCell.xib */; };
 		2F47C8C727B7F0D30071212B /* MLSearchNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F47C8C627B7F0D30071212B /* MLSearchNetworkWorker.swift */; };
 		2F47C8CC27B7F1EB0071212B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F47C8CB27B7F1EB0071212B /* Item.swift */; };
 		2F4F6CE827B72010000AB7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F6CE727B72010000AB7C6 /* AppDelegate.swift */; };
@@ -54,6 +56,8 @@
 		0F6C5504CF2486A3760B164A /* Pods-Mercadolibre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercadolibre.release.xcconfig"; path = "Target Support Files/Pods-Mercadolibre/Pods-Mercadolibre.release.xcconfig"; sourceTree = "<group>"; };
 		2F26F3BC27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchLoadingCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F26F3C227B838A700982FFC /* SearchEmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchEmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F47C8C627B7F0D30071212B /* MLSearchNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchNetworkWorker.swift; sourceTree = "<group>"; };
 		2F47C8CB27B7F1EB0071212B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2F4F6CE427B72010000AB7C6 /* Mercadolibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercadolibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,15 @@
 				2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		2F26F3C027B8384B00982FFC /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */,
+				2F26F3C227B838A700982FFC /* SearchEmptyCollectionViewCell.xib */,
+			);
+			path = Empty;
 			sourceTree = "<group>";
 		};
 		2F47C8C527B7F0BD0071212B /* Workers */ = {
@@ -254,6 +267,7 @@
 		2F56213827B80F120076F42B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				2F26F3C027B8384B00982FFC /* Empty */,
 				2F26F3BB27B82B6000982FFC /* Loading */,
 				2F26F3BA27B82B5700982FFC /* Success */,
 			);
@@ -449,6 +463,7 @@
 			files = (
 				2F4F6CF427B72011000AB7C6 /* LaunchScreen.storyboard in Resources */,
 				2FAF89D127B72D0900756C98 /* MLSearchViewController.xib in Resources */,
+				2F26F3C427B838A700982FFC /* SearchEmptyCollectionViewCell.xib in Resources */,
 				2F26F3BF27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib in Resources */,
 				2F56214427B812C10076F42B /* SearchCollectionViewCell.xib in Resources */,
 				2F4F6CF127B72011000AB7C6 /* Assets.xcassets in Resources */,
@@ -553,6 +568,7 @@
 				2F4F6CEA27B72010000AB7C6 /* SceneDelegate.swift in Sources */,
 				2F56214327B812C10076F42B /* SearchCollectionViewCell.swift in Sources */,
 				2F26F3BE27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift in Sources */,
+				2F26F3C327B838A700982FFC /* SearchEmptyCollectionViewCell.swift in Sources */,
 				2F47C8C727B7F0D30071212B /* MLSearchNetworkWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

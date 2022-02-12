@@ -73,6 +73,9 @@ extension MLSearchViewController {
         let loadingId = String(describing: SearchLoadingCollectionViewCell.self)
         _collectionView.register(UINib(nibName: loadingId, bundle: nil), forCellWithReuseIdentifier: loadingId)
         
+        let emptyId = String(describing: SearchEmptyCollectionViewCell.self)
+        _collectionView.register(UINib(nibName: emptyId, bundle: nil), forCellWithReuseIdentifier: emptyId)
+        
         return DataSource(
             collectionView: _collectionView) { collectionView, indexPath, item in
                 if let item = item as? SearchItemSuccess {
@@ -80,8 +83,12 @@ extension MLSearchViewController {
                     cell?.setViewModel(item.viewModel)
                     return cell
                 }
-                if let _ = item as? SearchItemLoading {
+                if item is SearchItemLoading {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadingId, for: indexPath) as? SearchLoadingCollectionViewCell
+                    return cell
+                }
+                if item is SearchEmptyItem {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyId, for: indexPath) as! SearchEmptyCollectionViewCell
                     return cell
                 }
                 
@@ -93,7 +100,7 @@ extension MLSearchViewController {
         _collectionView.collectionViewLayout =  UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
             let size = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
-                heightDimension: sectionIndex == 0 ? .absolute(130) : .fractionalHeight(1)
+                heightDimension: sectionIndex == 0 ? .absolute(150) : .fractionalHeight(1)
             )
             let item = NSCollectionLayoutItem(layoutSize: size)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)

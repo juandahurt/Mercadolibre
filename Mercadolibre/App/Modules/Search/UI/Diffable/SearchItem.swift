@@ -29,3 +29,5 @@ class SearchItemSuccess: SearchItem {
 }
 
 class SearchItemLoading: SearchItem {}
+
+class SearchEmptyItem: SearchItem {}
