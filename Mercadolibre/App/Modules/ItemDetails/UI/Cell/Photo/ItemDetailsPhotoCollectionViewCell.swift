@@ -9,11 +9,9 @@ import UIKit
 
 class ItemDetailsPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var _imageView: UIImageView!
-
-    var pictureIndex = 0
     
-    func setViewModel(_ viewModel: MLItemDetailsViewModel) {
-        if let url = URL(string: viewModel.getPicture(at: pictureIndex).url) {
+    func setViewModel(_ viewModel: MLItemDetailsPictureViewModel) {
+        if let url = URL(string: viewModel.picture.url) {
             DispatchQueue.global(qos: .userInitiated).async {
                 if let data = try? Data(contentsOf: url) {
                     DispatchQueue.main.async { [weak self] in

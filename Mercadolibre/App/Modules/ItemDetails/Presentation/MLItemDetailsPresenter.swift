@@ -24,8 +24,8 @@ class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
                 ItemDetailsHeaderItem(viewModel: MLItemDetailsViewModel(details: data))
             ]
         )
-        let photoItems = data.pictures.map({ _ in
-            ItemDetailsPhotoItem(viewModel: MLItemDetailsViewModel(details: data))
+        let photoItems = data.pictures.map({
+            ItemDetailsPhotoItem(viewModel: MLItemDetailsPictureViewModel(picture: $0))
         })
         let photoSection = ItemDetailsSection(
             items: photoItems

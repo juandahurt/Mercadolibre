@@ -28,9 +28,9 @@ class ItemDetailsHeaderItem: ItemDetailsSectionItem {
 }
 
 class ItemDetailsPhotoItem: ItemDetailsSectionItem {
-    let viewModel: MLItemDetailsViewModel
+    let viewModel: MLItemDetailsPictureViewModel
     
-    init(viewModel: MLItemDetailsViewModel) {
+    init(viewModel: MLItemDetailsPictureViewModel) {
         self.viewModel = viewModel
     }
 }

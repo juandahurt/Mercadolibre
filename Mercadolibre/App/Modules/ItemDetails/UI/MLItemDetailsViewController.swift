@@ -63,7 +63,6 @@ extension MLItemDetailsViewController {
                 }
                 if let item = item as? ItemDetailsPhotoItem {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photoId, for: indexPath) as? ItemDetailsPhotoCollectionViewCell
-                    cell?.pictureIndex = indexPath.row
                     cell?.setViewModel(item.viewModel)
                     return cell
                 }
