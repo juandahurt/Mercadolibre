@@ -51,6 +51,21 @@ class MLSearchModuleTests: XCTestCase {
         let emptyCell = sut._collectionView.dataSource?.collectionView(sut._collectionView, cellForItemAt: .init(row: 0, section: 0))
         XCTAssert(emptyCell is SearchErrorCollectionViewCell)
     }
+    
+    func test_show_loading() {
+        let presenter = MLSearchPresenter()
+        let interactor = MockLoadingSearchInteractor(presenter: presenter)
+        let sut = MLSearchViewController(interactor: interactor)
+        presenter.viewController = sut
+        
+        sut.loadViewIfNeeded()
+        
+        interactor.search("")
+        let numberOfItems = sut._collectionView.numberOfItems(inSection: 1)
+        XCTAssertEqual(numberOfItems, 1)
+        let emptyCell = sut._collectionView.dataSource?.collectionView(sut._collectionView, cellForItemAt: .init(row: 0, section: 1))
+        XCTAssert(emptyCell is SearchLoadingCollectionViewCell)
+    }
 }
 
 
@@ -88,6 +103,18 @@ private class MockErrorSearchInteractor: MLSearchBussinessLogic {
     
     func search(_ text: String) {
         self.presenter.showError(error: TestingSearchError.unknown)
+    }
+}
+
+private class MockLoadingSearchInteractor: MLSearchBussinessLogic {
+    let presenter: MLSearchPresentationLogic
+    
+    init(presenter: MLSearchPresentationLogic) {
+        self.presenter = presenter
+    }
+    
+    func search(_ text: String) {
+        self.presenter.showLoading()
     }
 }
 
