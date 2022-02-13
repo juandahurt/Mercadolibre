@@ -12,6 +12,18 @@ class ItemDetailsPriceCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var _priceLabel: UILabel!
     @IBOutlet private weak var _discountLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        _setup()
+    }
+    
+    private func _setup() {
+        _originalPriceLabel.font = AppStyle.Font.get(.regular, size: .title)
+        _priceLabel.font = AppStyle.Font.get(.regular, size: .header)
+        _discountLabel.font = AppStyle.Font.get(.regular, size: .subtitle)
+    }
+    
     func setViewModel(_ viewModel: MLItemDetailsPriceViewModel) {
         if viewModel.hasDiscount {
             _discountLabel.text = viewModel.discount

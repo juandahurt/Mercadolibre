@@ -13,6 +13,18 @@ class SearchCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var _priceLabel: UILabel!
     @IBOutlet private weak var _discountLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        _setup()
+    }
+    
+    private func _setup() {
+        _titleLabel.font = AppStyle.Font.get(.regular, size: .body)
+        _priceLabel.font = AppStyle.Font.get(.medium, size: .title)
+        _discountLabel.font = AppStyle.Font.get(.regular, size: .body)
+    }
+    
     func setViewModel(_ viewModel: MLSearchViewModel) {
         _titleLabel.text = viewModel.item.title
         _priceLabel.text = viewModel.getFormattedPrice()

@@ -62,6 +62,7 @@
 		2F9D2EE227B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D2EE027B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.xib */; };
 		2F9D2EE827B9B85400F18307 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D2EE727B9B85400F18307 /* Util.swift */; };
 		2F9D2EEA27B9B97000F18307 /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D2EE927B9B97000F18307 /* UtilTests.swift */; };
+		2F9D2EEC27B9B9F100F18307 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D2EEB27B9B9F100F18307 /* AppStyle.swift */; };
 		2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */; };
 		2FAF89C927B72A1400756C98 /* MLLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89C827B72A1400756C98 /* MLLoggerTests.swift */; };
 		2FAF89D027B72D0900756C98 /* MLSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89CE27B72D0900756C98 /* MLSearchViewController.swift */; };
@@ -136,6 +137,7 @@
 		2F9D2EE027B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsBuyCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F9D2EE727B9B85400F18307 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		2F9D2EE927B9B97000F18307 /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
+		2F9D2EEB27B9B9F100F18307 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		2FAF89BD27B729CE00756C98 /* MercadolibreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadolibreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadolibreTests.swift; sourceTree = "<group>"; };
 		2FAF89C827B72A1400756C98 /* MLLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLLoggerTests.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				2F56213327B800D00076F42B /* Constants.swift */,
+				2F9D2EEB27B9B9F100F18307 /* AppStyle.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				2F56213E27B80FA50076F42B /* SearchSection.swift in Sources */,
 				2F56213427B800D00076F42B /* Constants.swift in Sources */,
 				2F9D2EE127B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.swift in Sources */,
+				2F9D2EEC27B9B9F100F18307 /* AppStyle.swift in Sources */,
 				2F83371927B994CC00B52C6C /* MLItemDetailsPriceViewModel.swift in Sources */,
 				2FAF89D427B72FDF00756C98 /* MLSearchModule.swift in Sources */,
 				2F18C08927B97280005D545D /* ItemDetailsHeaderCollectionViewCell.swift in Sources */,

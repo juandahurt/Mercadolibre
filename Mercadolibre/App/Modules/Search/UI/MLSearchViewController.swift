@@ -17,6 +17,7 @@ class MLSearchViewController: UIViewController {
             _searchBarView.searchTextField.layer.cornerRadius = 15
             _searchBarView.backgroundImage = UIImage()
             _searchBarView.searchTextField.placeholder = "Buscar en Mercado Libre"
+            _searchBarView.searchTextField.font = AppStyle.Font.get(.regular, size: .body)
         }
     }
     @IBOutlet weak var _collectionView: UICollectionView!
