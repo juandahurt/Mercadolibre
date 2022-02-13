@@ -10,6 +10,7 @@
 		2DEADFBD4E6D55FEF9520939 /* Pods_Mercadolibre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22CF799FF4011A691795644 /* Pods_Mercadolibre.framework */; };
 		2EAA589CD40D77A9984E6F27 /* Pods_MercadolibreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB938BC7C1350DFD56E14 /* Pods_MercadolibreTests.framework */; };
 		2F18C06827B89F3E005D545D /* MLSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */; };
+		2F18C06D27B95592005D545D /* MLSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18C06C27B95592005D545D /* MLSearchRouter.swift */; };
 		2F26F3BE27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26F3BC27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift */; };
 		2F26F3BF27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */; };
 		2F26F3C327B838A700982FFC /* SearchEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		0F6C5504CF2486A3760B164A /* Pods-Mercadolibre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercadolibre.release.xcconfig"; path = "Target Support Files/Pods-Mercadolibre/Pods-Mercadolibre.release.xcconfig"; sourceTree = "<group>"; };
 		2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchModuleTests.swift; sourceTree = "<group>"; };
+		2F18C06C27B95592005D545D /* MLSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchRouter.swift; sourceTree = "<group>"; };
 		2F26F3BC27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchLoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 				2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		2F18C06B27B95580005D545D /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				2F18C06C27B95592005D545D /* MLSearchRouter.swift */,
+			);
+			path = Routing;
 			sourceTree = "<group>";
 		};
 		2F26F3BA27B82B5700982FFC /* Success */ = {
@@ -361,6 +371,7 @@
 		2FAF89CC27B72CD200756C98 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				2F18C06B27B95580005D545D /* Routing */,
 				2F47C8C827B7F1170071212B /* Models */,
 				2F47C8C527B7F0BD0071212B /* Workers */,
 				2F805FAB27B73BD900D5477D /* Presentation */,
@@ -597,6 +608,7 @@
 				2F805FAA27B73B1F00D5477D /* MLSearchInteractor.swift in Sources */,
 				2F26F3C827B84B3100982FFC /* SearchErrorCollectionViewCell.swift in Sources */,
 				2F805FAD27B73BE600D5477D /* MLSearchPresenter.swift in Sources */,
+				2F18C06D27B95592005D545D /* MLSearchRouter.swift in Sources */,
 				2FAF89D027B72D0900756C98 /* MLSearchViewController.swift in Sources */,
 				2F56213627B80B8D0076F42B /* SearchResult.swift in Sources */,
 				2F56212A27B7FD860076F42B /* NetworkError.swift in Sources */,
