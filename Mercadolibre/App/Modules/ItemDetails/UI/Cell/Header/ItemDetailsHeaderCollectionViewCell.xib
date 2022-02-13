@@ -18,28 +18,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition | 23 sells" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNX-ck-8rl">
-                        <rect key="frame" x="0.0" y="0.0" width="123" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" name="Gray"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzg-i0-mA0">
-                        <rect key="frame" x="0.0" y="29" width="361" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M3p-Ln-dXW">
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition | 23 sells" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNX-ck-8rl">
+                                <rect key="frame" x="0.0" y="0.0" width="361" height="28.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzg-i0-mA0">
+                                <rect key="frame" x="0.0" y="38.5" width="361" height="41.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MNX-ck-8rl" firstAttribute="leading" secondItem="M3p-Ln-dXW" secondAttribute="leading" id="B7X-4D-7hB"/>
+                            <constraint firstAttribute="trailing" secondItem="MNX-ck-8rl" secondAttribute="trailing" id="L56-Fb-obc"/>
+                            <constraint firstItem="Hzg-i0-mA0" firstAttribute="leading" secondItem="M3p-Ln-dXW" secondAttribute="leading" id="RYI-nh-3HJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Hzg-i0-mA0" secondAttribute="trailing" id="dGb-BE-ZHw"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Hzg-i0-mA0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="F5e-jH-ivq"/>
-                <constraint firstItem="MNX-ck-8rl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MkK-fB-k7j"/>
-                <constraint firstAttribute="trailing" secondItem="Hzg-i0-mA0" secondAttribute="trailing" id="PEr-bx-op7"/>
-                <constraint firstItem="MNX-ck-8rl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pL6-0x-1ir"/>
-                <constraint firstItem="Hzg-i0-mA0" firstAttribute="top" secondItem="MNX-ck-8rl" secondAttribute="bottom" constant="12" id="x9s-lT-7ce"/>
+                <constraint firstAttribute="bottom" secondItem="M3p-Ln-dXW" secondAttribute="bottom" id="734-C9-8nh"/>
+                <constraint firstAttribute="trailing" secondItem="M3p-Ln-dXW" secondAttribute="trailing" id="TPl-H2-Cb0"/>
+                <constraint firstItem="M3p-Ln-dXW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fRS-uE-K29"/>
+                <constraint firstItem="M3p-Ln-dXW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lMY-IB-lyC"/>
             </constraints>
             <size key="customSize" width="361" height="80"/>
             <connections>
