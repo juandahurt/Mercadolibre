@@ -115,8 +115,8 @@ extension MLItemDetailsViewController {
                     heightDimension: .fractionalHeight(0.3)
                 )
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+                group.contentInsets = .init(top: 15, leading: 16, bottom: 0, trailing: 16)
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = .init(top: 15, leading: 16, bottom: 0, trailing: 16)
                 section.orthogonalScrollingBehavior = .groupPagingCentered
                 return section
             } else if sectionIndex == 2 {
