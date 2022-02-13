@@ -19,6 +19,7 @@ class MLSearchViewController: UIViewController {
             _searchBarView.searchTextField.placeholder = "Buscar en Mercado Libre"
             _searchBarView.searchTextField.font = AppStyle.Font.get(.regular, size: .body)
             _searchBarView.searchTextField.delegate = self
+            _searchBarView.searchTextField.textColor = .black
         }
     }
     @IBOutlet weak var _collectionView: UICollectionView!
