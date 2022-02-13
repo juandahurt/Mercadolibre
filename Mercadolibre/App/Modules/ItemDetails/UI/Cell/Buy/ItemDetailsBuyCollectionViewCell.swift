@@ -26,6 +26,9 @@ class ItemDetailsBuyCollectionViewCell: UICollectionViewCell {
         _buyButton.setTitle("Comprar ahora", for: .normal)
         _addToCartButton.setTitle("Agregar al carrito", for: .normal)
         
+        _buyButton.titleLabel?.font = AppStyle.Font.get(.medium, size: .subtitle)
+        _addToCartButton.titleLabel?.font = AppStyle.Font.get(.medium, size: .subtitle)
+        
         _buyButton.addTarget(self, action: #selector(_buyWasTapped), for: .touchUpInside)
     }
     

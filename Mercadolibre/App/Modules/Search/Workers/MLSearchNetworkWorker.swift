@@ -9,11 +9,11 @@ import Foundation
 import RxSwift
 
 protocol MLSearchWorker {
-    func fetchItems(from query: String) -> Single<[Item]>
+    func fetchItems(from query: String, offset: Int, limit: Int) -> Single<([Item], ItemPaging)>
 }
 
 class MLSearchNetworkWorker: MLSearchWorker {
-    func fetchItems(from query: String) -> Single<[Item]> {
+    func fetchItems(from query: String, offset: Int, limit: Int) -> Single<([Item], ItemPaging)> {
         MLLogger.instance.log("worker: searching query: '\(query)'", level: .debug)
         
         return Single.create { single in
@@ -27,7 +27,7 @@ class MLSearchNetworkWorker: MLSearchWorker {
                 return disposable
             }
             
-            manager.request(path: ApiService.search, params: ["q": query]) { data, error in
+            manager.request(path: ApiService.search, params: ["q": query, "offset": "\(offset)", "limit": "\(limit)"]) { data, error in
                 if let error = error {
                     single(.failure(error))
                     return
@@ -37,7 +37,7 @@ class MLSearchNetworkWorker: MLSearchWorker {
                     let decoder = JSONDecoder()
                     do {
                         let result = try decoder.decode(SearchResult.self, from: data)
-                        single(.success(result.results))
+                        single(.success((result.results, result.paging)))
                     } catch {
                         MLLogger.instance.log("worker error: \(error.localizedDescription)", level: .debug)
                         single(.failure(error))

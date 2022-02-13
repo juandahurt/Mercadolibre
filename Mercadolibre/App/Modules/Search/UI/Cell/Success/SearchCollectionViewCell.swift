@@ -8,13 +8,26 @@
 import UIKit
 
 class SearchCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var priceLabel: UILabel!
-
-    func setViewModel(_ viewModel: SearchViewModel) {
-        titleLabel.text = viewModel.item.title
-        priceLabel.text = viewModel.getFormattedPrice()
+    @IBOutlet private weak var _titleLabel: UILabel!
+    @IBOutlet private weak var _imageView: UIImageView!
+    @IBOutlet private weak var _priceLabel: UILabel!
+    @IBOutlet private weak var _discountLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        _setup()
+    }
+    
+    private func _setup() {
+        _titleLabel.font = AppStyle.Font.get(.regular, size: .body)
+        _priceLabel.font = AppStyle.Font.get(.medium, size: .title)
+        _discountLabel.font = AppStyle.Font.get(.regular, size: .body)
+    }
+    
+    func setViewModel(_ viewModel: MLSearchViewModel) {
+        _titleLabel.text = viewModel.item.title
+        _priceLabel.text = viewModel.getFormattedPrice()
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self = self else { return }
             
@@ -22,10 +35,16 @@ class SearchCollectionViewCell: UICollectionViewCell {
                 if let data = try? Data(contentsOf: url) {
                     let image = UIImage(data: data)
                     DispatchQueue.main.async {
-                        self.imageView.image = image
+                        self._imageView.image = image
                     }
                 }
             }
+        }
+    
+        if viewModel.hasDiscount {
+            _discountLabel.text = viewModel.discount
+        } else {
+            _discountLabel.isHidden = true
         }
     }
 }
