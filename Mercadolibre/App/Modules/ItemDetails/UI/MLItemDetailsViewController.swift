@@ -8,11 +8,13 @@
 import UIKit
 
 class MLItemDetailsViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let _itemId: String
+    private let _interactor: MLItemDetailsBussinessLogic
     
-    init() {
+    init(interactor: MLItemDetailsBussinessLogic, itemId: String) {
+        self._interactor = interactor
+        self._itemId = itemId
+        
         let nibName = String(describing: Self.self)
         super.init(nibName: nibName, bundle: nil)
     }
@@ -24,4 +26,11 @@ class MLItemDetailsViewController: UIViewController {
     deinit {
         MLLogger.instance.log("details view is being deallocated", level: .debug)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        _interactor.getDetails(id: _itemId)
+    }
+    
 }

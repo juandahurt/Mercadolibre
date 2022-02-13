@@ -30,7 +30,7 @@ class MLSearchRouter: MLSearchRoutingLogic {
     }
     
     func showItem(identifiedBy id: String) {
-        let detailsModule = MLItemDetailsModule.setup(with: navigationController)
-        detailsModule.show(id: id)
+        let detailsModule = MLItemDetailsModule.setup(with: navigationController, itemId: id)
+        detailsModule.show()
     }
 }

@@ -12,17 +12,19 @@ class MLItemDetailsModule {
     private let viewController: MLItemDetailsViewController
     private let router: MLItemDetailsRouter
     
-    private init(navigationController: UINavigationController) {
+    private init(navigationController: UINavigationController, itemId: String) {
         router = MLItemDetailsRouter(navigationController: navigationController)
-        viewController = MLItemDetailsViewController()
+        let presenter = MLItemDetailsPresenter()
+        let interactor = MLItemDetailsInteractor(presenter: presenter)
+        viewController = MLItemDetailsViewController(interactor: interactor, itemId: itemId)
         router.viewController = viewController
     }
     
-    static func setup(with navigationController: UINavigationController) -> MLItemDetailsModule {
-        MLItemDetailsModule(navigationController: navigationController)
+    static func setup(with navigationController: UINavigationController, itemId: String) -> MLItemDetailsModule {
+        MLItemDetailsModule(navigationController: navigationController, itemId: itemId)
     }
     
-    func show(id: String) {
+    func show() {
         router.show()
     }
 }
