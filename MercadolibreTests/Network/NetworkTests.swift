@@ -10,8 +10,8 @@ import XCTest
 
 class NetworkTests: XCTestCase {
     func test_malformed_url() {
-        let manager = NetworkManager(baseUrl: "wrong url!")
-        manager.request { _, error in
+        let sut = NetworkManager(baseUrl: "wrong url!")
+        sut.request { _, error in
             if let error = error as? NetworkError {
                 XCTAssert(error == .malformedUrl)
             } else {
