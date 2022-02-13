@@ -12,7 +12,8 @@ class MLSearchModuleTests: XCTestCase {
     func test_view_presents_all_items() {
         let presenter = MLSearchPresenter()
         let interactor = MockSearchInteractor(presenter: presenter)
-        let sut = MLSearchViewController(interactor: interactor)
+        let router = MLSearchRouter(navigationController: UINavigationController())
+        let sut = MLSearchViewController(interactor: interactor, router: router)
         presenter.viewController = sut
         
         sut.loadViewIfNeeded()
@@ -25,7 +26,8 @@ class MLSearchModuleTests: XCTestCase {
     func test_show_empty_result() {
         let presenter = MLSearchPresenter()
         let interactor = MockEmptySearchInteractor(presenter: presenter)
-        let sut = MLSearchViewController(interactor: interactor)
+        let router = MLSearchRouter(navigationController: UINavigationController())
+        let sut = MLSearchViewController(interactor: interactor, router: router)
         presenter.viewController = sut
         
         sut.loadViewIfNeeded()
@@ -40,7 +42,8 @@ class MLSearchModuleTests: XCTestCase {
     func test_show_error() {
         let presenter = MLSearchPresenter()
         let interactor = MockErrorSearchInteractor(presenter: presenter)
-        let sut = MLSearchViewController(interactor: interactor)
+        let router = MLSearchRouter(navigationController: UINavigationController())
+        let sut = MLSearchViewController(interactor: interactor, router: router)
         presenter.viewController = sut
         
         sut.loadViewIfNeeded()
@@ -55,7 +58,8 @@ class MLSearchModuleTests: XCTestCase {
     func test_show_loading() {
         let presenter = MLSearchPresenter()
         let interactor = MockLoadingSearchInteractor(presenter: presenter)
-        let sut = MLSearchViewController(interactor: interactor)
+        let router = MLSearchRouter(navigationController: UINavigationController())
+        let sut = MLSearchViewController(interactor: interactor, router: router)
         presenter.viewController = sut
         
         sut.loadViewIfNeeded()

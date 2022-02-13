@@ -9,16 +9,18 @@ import Foundation
 import UIKit
 
 class MLSearchModule {
-    private let navigationController: UINavigationController
+    private let router: MLSearchRouter
     private let view: MLSearchViewController
     
     private init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+        router = MLSearchRouter(navigationController: navigationController)
         let presenter = MLSearchPresenter()
         let worker = MLSearchNetworkWorker()
         let interactor = MLSearchInteractor(presenter: presenter, worker: worker)
-        view = MLSearchViewController(interactor: interactor)
+        view = MLSearchViewController(interactor: interactor, router: router)
+        
         presenter.viewController = view
+        router.viewController = view
     }
     
     static func setup(with navigationController: UINavigationController) -> MLSearchModule {
@@ -26,6 +28,6 @@ class MLSearchModule {
     }
     
     func show() {
-        navigationController.pushViewController(view, animated: false)
+        router.show()
     }
 }
