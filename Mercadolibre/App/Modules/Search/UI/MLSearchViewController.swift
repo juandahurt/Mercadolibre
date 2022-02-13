@@ -140,7 +140,7 @@ extension MLSearchViewController: UICollectionViewDelegate {
 
         if let selectedItem = section.items[indexPath.row] as? SearchItemSuccess {
             let id = selectedItem.viewModel.item.id
-            MLLogger.instance.log("search view: user selected item: \(id)", level: .debug)
+            MLLogger.instance.log("search view: user selected item: \(id)", level: .info)
             _router.showItem(identifiedBy: id)
         }
     }

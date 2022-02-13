@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 
 class MLItemDetailsModule {
+    private let viewController: MLItemDetailsViewController
     private let router: MLItemDetailsRouter
     
     private init(navigationController: UINavigationController) {
         router = MLItemDetailsRouter(navigationController: navigationController)
+        viewController = MLItemDetailsViewController()
+        router.viewController = viewController
     }
     
     static func setup(with navigationController: UINavigationController) -> MLItemDetailsModule {
