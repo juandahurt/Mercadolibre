@@ -25,7 +25,12 @@ class ItemDetailsBuyCollectionViewCell: UICollectionViewCell {
         
         _buyButton.setTitle("Comprar ahora", for: .normal)
         _addToCartButton.setTitle("Agregar al carrito", for: .normal)
+        
+        _buyButton.addTarget(self, action: #selector(_buyWasTapped), for: .touchUpInside)
     }
     
-    
+    @objc
+    private func _buyWasTapped() {
+        buyOnTap?()
+    }
 }

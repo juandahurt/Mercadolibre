@@ -82,9 +82,13 @@ extension MLItemDetailsViewController {
                     cell?.setViewModel(item.viewModel)
                     return cell
                 }
-                if let _ = item as? ItemDetailsBuyItem {
+                if let item = item as? ItemDetailsBuyItem {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buyId, for: indexPath) as? ItemDetailsBuyCollectionViewCell
-//                    cell?.setViewModel(item.viewModel)
+                    cell?.buyOnTap = { [weak self] in
+                        guard let self = self else { return }
+                        
+                        self._interactor.openItemLink(item.link)
+                    }
                     return cell
                 }
                 

@@ -43,4 +43,10 @@ class ItemDetailsPriceItem: ItemDetailsSectionItem {
     }
 }
 
-class ItemDetailsBuyItem: ItemDetailsSectionItem {}
+class ItemDetailsBuyItem: ItemDetailsSectionItem {
+    let link: String
+    
+    init(link: String) {
+        self.link = link
+    }
+}

@@ -10,6 +10,7 @@ import RxSwift
 
 protocol MLItemDetailsBussinessLogic {
     func getDetails(id: String)
+    func openItemLink(_ link: String)
 }
 
 class MLItemDetailsInteractor: MLItemDetailsBussinessLogic {
@@ -32,5 +33,11 @@ class MLItemDetailsInteractor: MLItemDetailsBussinessLogic {
             }, onFailure: { error in
                 print(error)
             }).disposed(by: _disposeBag)
+    }
+    
+    func openItemLink(_ link: String) {
+        if let url = URL(string: link) {
+            UIApplication.shared.open(url)
+        }
     }
 }

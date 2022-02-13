@@ -35,7 +35,7 @@ class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
                 ItemDetailsPriceItem(viewModel: MLItemDetailsPriceViewModel(details: data))
             ]
         )
-        let buySection = ItemDetailsSection(items: [ItemDetailsBuyItem()])
+        let buySection = ItemDetailsSection(items: [ItemDetailsBuyItem(link: data.permalink)])
         viewController.applySnapshot(
             sections: [
                 headerSection,

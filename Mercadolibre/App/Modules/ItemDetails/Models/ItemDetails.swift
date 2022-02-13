@@ -15,13 +15,14 @@ struct ItemDetails: Decodable {
     var pictures: [ItemPicture]
     var price: Double
     var originalPrice: Double?
+    var permalink: String
     
     enum ContainerCodingKeys: CodingKey {
         case body
     }
     
     enum CodingKeys: String, CodingKey {
-        case id, title, condition, pictures, price
+        case id, title, condition, pictures, price, permalink
         case soldQuantity = "sold_quantity"
         case originalPrice = "original_price"
     }
@@ -29,6 +30,7 @@ struct ItemDetails: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: ContainerCodingKeys.self)
         let dataContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .body)
+        
         id = try dataContainer.decode(String.self, forKey: .id)
         title = try dataContainer.decode(String.self, forKey: .title)
         condition = try dataContainer.decode(ItemCondition.self, forKey: .condition)
@@ -36,6 +38,7 @@ struct ItemDetails: Decodable {
         soldQuantity = try dataContainer.decode(Int.self, forKey: .soldQuantity)
         price = try dataContainer.decode(Double.self, forKey: .price)
         originalPrice = try dataContainer.decodeIfPresent(Double.self, forKey: .originalPrice)
+        permalink = try dataContainer.decode(String.self, forKey: .permalink)
     }
 }
 
