@@ -15,7 +15,11 @@ class MLItemDetailsPriceViewModel {
     }
     
     var hasDiscount: Bool {
-        details.originalPrice != nil
+        if let originalPrice = details.originalPrice {
+            return originalPrice > details.price
+        } else {
+            return false
+        }
     }
     
     var price: String {
