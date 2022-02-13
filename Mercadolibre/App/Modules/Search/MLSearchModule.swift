@@ -17,7 +17,7 @@ class MLSearchModule {
         let presenter = MLSearchPresenter()
         let worker = MLSearchNetworkWorker()
         let interactor = MLSearchInteractor(presenter: presenter, worker: worker)
-        view = MLSearchViewController(interactor: interactor)
+        view = MLSearchViewController(interactor: interactor, router: router)
         
         presenter.viewController = view
         router.viewController = view

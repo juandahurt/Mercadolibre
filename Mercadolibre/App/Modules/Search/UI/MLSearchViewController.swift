@@ -25,12 +25,14 @@ class MLSearchViewController: UIViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<SearchSection, SearchItem>
     
     private let _disposeBag = DisposeBag()
+    private let _router: MLSearchRoutingLogic
     private let _interactor: MLSearchBussinessLogic
     
     private var _dataSource: DataSource!
     
-    init(interactor: MLSearchBussinessLogic) {
+    init(interactor: MLSearchBussinessLogic, router: MLSearchRoutingLogic) {
         _interactor = interactor
+        _router = router
         
         let nibName = String(describing: Self.self)
         super.init(nibName: nibName, bundle: nil)
@@ -47,6 +49,8 @@ class MLSearchViewController: UIViewController {
         _dataSource = _createDataSource()
         _collectionView.dataSource = _dataSource
         _setupLayout()
+        
+        _collectionView.delegate = self
     }
     
     private func _rxBind() {
@@ -123,5 +127,21 @@ extension MLSearchViewController {
             snapshot.appendItems(section.items, toSection: section)
         }
         _dataSource.apply(snapshot)
+    }
+}
+
+
+extension MLSearchViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard _dataSource.snapshot().sectionIdentifiers.count == 1 else { return }
+        
+        let section = _dataSource.snapshot().sectionIdentifiers[0]
+        guard section.items.contains(where: { $0 is SearchItemSuccess }) else { return }
+
+        if let selectedItem = section.items[indexPath.row] as? SearchItemSuccess {
+            let id = selectedItem.viewModel.item.id
+            MLLogger.instance.log("search view: user selected item: \(id)", level: .debug)
+            _router.showItem(identifiedBy: id)
+        }
     }
 }

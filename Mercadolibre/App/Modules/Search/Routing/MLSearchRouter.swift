@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-protocol SearchRoutingLogic {
+protocol MLSearchRoutingLogic {
     func show()
     func showItem(identifiedBy id: String)
 }
 
-class MLSearchRouter: SearchRoutingLogic {
+class MLSearchRouter: MLSearchRoutingLogic {
     weak var viewController: UIViewController?
     private let navigationController: UINavigationController
     
@@ -30,6 +30,7 @@ class MLSearchRouter: SearchRoutingLogic {
     }
     
     func showItem(identifiedBy id: String) {
-        // TODO: Go to item details module
+        let detailsModule = MLItemDetailsModule.setup(with: navigationController)
+        detailsModule.show(id: id)
     }
 }
