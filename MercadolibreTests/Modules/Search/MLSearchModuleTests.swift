@@ -9,24 +9,32 @@ import XCTest
 @testable import Mercadolibre
 
 class MLSearchModuleTests: XCTestCase {
-    var viewController: MLSearchViewController!
-    var interactor: MLSearchBussinessLogic!
-    
-    override func setUp() {
-        super.setUp()
-        
+    func test_view_presents_all_items() {
         let presenter = MLSearchPresenter()
-        interactor = MockSearchInteractor(presenter: presenter)
-        viewController = MLSearchViewController(interactor: interactor)
-        presenter.viewController = viewController
+        let interactor = MockSearchInteractor(presenter: presenter)
+        let sut = MLSearchViewController(interactor: interactor)
+        presenter.viewController = sut
         
-        viewController.loadViewIfNeeded()
+        sut.loadViewIfNeeded()
+        
+        interactor.search("")
+        let numberOfItemsInScreen = sut._collectionView.numberOfItems(inSection: 0)
+        XCTAssertEqual(numberOfItemsInScreen, Item.test.count)
     }
     
-    func test_view_presents_all_items() {
+    func test_show_empty_result() {
+        let presenter = MLSearchPresenter()
+        let interactor = MockEmptySearchInteractor(presenter: presenter)
+        let sut = MLSearchViewController(interactor: interactor)
+        presenter.viewController = sut
+        
+        sut.loadViewIfNeeded()
+        
         interactor.search("")
-        let numberOfItemsInScreen = viewController._collectionView.numberOfItems(inSection: 0)
-        XCTAssertEqual(numberOfItemsInScreen, Item.test.count)
+        let numberOfItems = sut._collectionView.numberOfItems(inSection: 0)
+        XCTAssertEqual(numberOfItems, 1)
+        let emptyCell = sut._collectionView.dataSource?.collectionView(sut._collectionView, cellForItemAt: .init(row: 0, section: 0))
+        XCTAssert(emptyCell is SearchEmptyCollectionViewCell)
     }
 }
 
@@ -41,6 +49,18 @@ private class MockSearchInteractor: MLSearchBussinessLogic {
     
     func search(_ text: String) {
         self.presenter.showSearchResult(items: Item.test)
+    }
+}
+
+private class MockEmptySearchInteractor: MLSearchBussinessLogic {
+    let presenter: MLSearchPresentationLogic
+    
+    init(presenter: MLSearchPresentationLogic) {
+        self.presenter = presenter
+    }
+    
+    func search(_ text: String) {
+        self.presenter.showSearchResult(items: [])
     }
 }
 
