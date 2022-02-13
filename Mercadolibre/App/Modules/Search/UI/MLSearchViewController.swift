@@ -18,6 +18,7 @@ class MLSearchViewController: UIViewController {
             _searchBarView.backgroundImage = UIImage()
             _searchBarView.searchTextField.placeholder = "Buscar en Mercado Libre"
             _searchBarView.searchTextField.font = AppStyle.Font.get(.regular, size: .body)
+            _searchBarView.searchTextField.delegate = self
         }
     }
     @IBOutlet weak var _collectionView: UICollectionView!
@@ -140,9 +141,18 @@ extension MLSearchViewController: UICollectionViewDelegate {
         guard section.items.contains(where: { $0 is SearchItemSuccess }) else { return }
 
         if let selectedItem = section.items[indexPath.row] as? SearchItemSuccess {
+            view.endEditing(true)
             let id = selectedItem.viewModel.item.id
             MLLogger.instance.log("search view: user selected item: \(id)", level: .info)
             _router.showItem(identifiedBy: id)
         }
+    }
+}
+
+
+extension MLSearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }
