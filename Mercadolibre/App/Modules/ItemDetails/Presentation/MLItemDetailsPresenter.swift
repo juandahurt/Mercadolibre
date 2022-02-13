@@ -15,6 +15,15 @@ class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
     weak var viewController: MLItemDetailsViewController?
     
     func showDetails(_ data: ItemDetails) {
-        // TODO: Update view controller
+        guard let viewController = viewController else {
+            return
+        }
+        
+        let headerSection = ItemDetailsSection(
+            items: [
+                ItemDetailsHeaderItem(viewModel: MLItemDetailsViewModel(details: data))
+            ]
+        )
+        viewController.applySnapshot(sections: [headerSection])
     }
 }

@@ -25,8 +25,10 @@ class MLItemDetailsInteractor: MLItemDetailsBussinessLogic {
     
     func getDetails(id: String) {
         _worker.fetchDetails(id: id)
-            .subscribe(onSuccess: { details in
-                print(details)
+            .subscribe(onSuccess: { [weak self] details in
+                guard let self = self else { return }
+                
+                self._presenter.showDetails(details)
             }, onFailure: { error in
                 print(error)
             }).disposed(by: _disposeBag)

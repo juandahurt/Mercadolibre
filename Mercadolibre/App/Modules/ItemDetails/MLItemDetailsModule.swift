@@ -19,6 +19,7 @@ class MLItemDetailsModule {
         let interactor = MLItemDetailsInteractor(presenter: presenter, worker: worker)
         viewController = MLItemDetailsViewController(interactor: interactor, itemId: itemId)
         router.viewController = viewController
+        presenter.viewController = viewController
     }
     
     static func setup(with navigationController: UINavigationController, itemId: String) -> MLItemDetailsModule {
