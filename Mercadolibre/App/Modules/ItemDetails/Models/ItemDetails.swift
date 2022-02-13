@@ -11,14 +11,16 @@ struct ItemDetails: Decodable {
     var id: String
     var title: String
     var condition: ItemCondition
+    var soldQuantity: Int
     var pictures: [ItemPicture]
     
     enum ContainerCodingKeys: CodingKey {
         case body
     }
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id, title, condition, pictures
+        case soldQuantity = "sold_quantity"
     }
     
     init(from decoder: Decoder) throws {
@@ -28,6 +30,7 @@ struct ItemDetails: Decodable {
         title = try dataContainer.decode(String.self, forKey: .title)
         condition = try dataContainer.decode(ItemCondition.self, forKey: .condition)
         pictures = try dataContainer.decode([ItemPicture].self, forKey: .pictures)
+        soldQuantity = try dataContainer.decode(Int.self, forKey: .soldQuantity)
     }
 }
 

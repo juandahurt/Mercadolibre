@@ -14,11 +14,11 @@ class MLItemDetailsViewModel {
         self.details = details
     }
     
-    var condition: String {
+    var conditionText: String {
         get {
             switch details.condition {
             case .new:
-                return "Nuevo"
+                return "Nuevo | \(details.soldQuantity) vendidos" 
             }
         }
     }

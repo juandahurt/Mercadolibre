@@ -13,6 +13,6 @@ class ItemDetailsHeaderCollectionViewCell: UICollectionViewCell {
     
     func setViewModel(_ viewModel: MLItemDetailsViewModel) {
         _titleLabel.text = viewModel.details.title
-        _conditionLabel.text = viewModel.condition
+        _conditionLabel.text = viewModel.conditionText
     }
 }
