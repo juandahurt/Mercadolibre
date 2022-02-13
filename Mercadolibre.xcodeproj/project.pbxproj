@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2DEADFBD4E6D55FEF9520939 /* Pods_Mercadolibre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22CF799FF4011A691795644 /* Pods_Mercadolibre.framework */; };
 		2EAA589CD40D77A9984E6F27 /* Pods_MercadolibreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB938BC7C1350DFD56E14 /* Pods_MercadolibreTests.framework */; };
+		2F18C06827B89F3E005D545D /* MLSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */; };
 		2F26F3BE27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26F3BC27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift */; };
 		2F26F3BF27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */; };
 		2F26F3C327B838A700982FFC /* SearchEmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		0F6C5504CF2486A3760B164A /* Pods-Mercadolibre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercadolibre.release.xcconfig"; path = "Target Support Files/Pods-Mercadolibre/Pods-Mercadolibre.release.xcconfig"; sourceTree = "<group>"; };
+		2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchModuleTests.swift; sourceTree = "<group>"; };
 		2F26F3BC27B8346B00982FFC /* SearchLoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F26F3BD27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchLoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F26F3C127B838A700982FFC /* SearchEmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEmptyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -119,6 +121,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F18C06527B89F18005D545D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2F18C06627B89F20005D545D /* Search */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2F18C06627B89F20005D545D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		2F26F3BA27B82B5700982FFC /* Success */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +326,7 @@
 		2FAF89BE27B729CE00756C98 /* MercadolibreTests */ = {
 			isa = PBXGroup;
 			children = (
+				2F18C06527B89F18005D545D /* Modules */,
 				2F56212F27B7FF180076F42B /* Network */,
 				2FAF89C627B729E900756C98 /* Utils */,
 				2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */,
@@ -593,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F18C06827B89F3E005D545D /* MLSearchModuleTests.swift in Sources */,
 				2F56213127B7FF2D0076F42B /* NetworkTests.swift in Sources */,
 				2FAF89C927B72A1400756C98 /* MLLoggerTests.swift in Sources */,
 				2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */,
