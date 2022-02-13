@@ -22,4 +22,8 @@ class MLItemDetailsViewModel {
             }
         }
     }
+    
+    func getPicture(at index: Int) -> ItemPicture {
+        details.pictures[index]
+    }
 }

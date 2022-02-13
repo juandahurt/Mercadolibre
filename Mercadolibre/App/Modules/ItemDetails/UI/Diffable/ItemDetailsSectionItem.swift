@@ -26,3 +26,11 @@ class ItemDetailsHeaderItem: ItemDetailsSectionItem {
         self.viewModel = viewModel
     }
 }
+
+class ItemDetailsPhotoItem: ItemDetailsSectionItem {
+    let viewModel: MLItemDetailsViewModel
+    
+    init(viewModel: MLItemDetailsViewModel) {
+        self.viewModel = viewModel
+    }
+}

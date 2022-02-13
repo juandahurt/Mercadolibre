@@ -24,6 +24,12 @@ class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
                 ItemDetailsHeaderItem(viewModel: MLItemDetailsViewModel(details: data))
             ]
         )
-        viewController.applySnapshot(sections: [headerSection])
+        let photoItems = data.pictures.map({ _ in
+            ItemDetailsPhotoItem(viewModel: MLItemDetailsViewModel(details: data))
+        })
+        let photoSection = ItemDetailsSection(
+            items: photoItems
+        )
+        viewController.applySnapshot(sections: [headerSection, photoSection])
     }
 }

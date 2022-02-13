@@ -51,10 +51,19 @@ extension MLItemDetailsViewController {
         let headerId = String(describing: ItemDetailsHeaderCollectionViewCell.self)
         collectionView.register(UINib(nibName: headerId, bundle: nil), forCellWithReuseIdentifier: headerId)
         
+        let photoId = String(describing: ItemDetailsPhotoCollectionViewCell.self)
+        collectionView.register(UINib(nibName: photoId, bundle: nil), forCellWithReuseIdentifier: photoId)
+        
         return DataSource(
             collectionView: collectionView) { collectionView, indexPath, item in
                 if let item = item as? ItemDetailsHeaderItem {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as? ItemDetailsHeaderCollectionViewCell
+                    cell?.setViewModel(item.viewModel)
+                    return cell
+                }
+                if let item = item as? ItemDetailsPhotoItem {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: photoId, for: indexPath) as? ItemDetailsPhotoCollectionViewCell
+                    cell?.pictureIndex = indexPath.row
                     cell?.setViewModel(item.viewModel)
                     return cell
                 }
@@ -65,15 +74,28 @@ extension MLItemDetailsViewController {
     
     private func _setupLayout() {
         collectionView.collectionViewLayout =  UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, layoutEnvironment in
-            let size = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .estimated(80)
-            )
-            let item = NSCollectionLayoutItem(layoutSize: size)
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = .init(top: 10, leading: 16, bottom: 0, trailing: 16)
-            return section
+            if sectionIndex == 0 {
+                let size = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .estimated(80)
+                )
+                let item = NSCollectionLayoutItem(layoutSize: size)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = .init(top: 10, leading: 16, bottom: 0, trailing: 16)
+                return section
+            } else {
+                let size = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .fractionalHeight(0.6)
+                )
+                let item = NSCollectionLayoutItem(layoutSize: size)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
+                section.orthogonalScrollingBehavior = .groupPagingCentered
+                return section
+            }
         })
     }
     
