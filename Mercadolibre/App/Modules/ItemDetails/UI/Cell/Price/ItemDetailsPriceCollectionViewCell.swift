@@ -15,7 +15,10 @@ class ItemDetailsPriceCollectionViewCell: UICollectionViewCell {
     func setViewModel(_ viewModel: MLItemDetailsPriceViewModel) {
         if viewModel.hasDiscount {
             _discountLabel.text = viewModel.discount
-            _originalPriceLabel.text = viewModel.originalPrice
+            
+            let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: viewModel.originalPrice)
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+            _originalPriceLabel.attributedText = attributeString
         } else {
             _originalPriceLabel.removeFromSuperview()
             _discountLabel.removeFromSuperview()
