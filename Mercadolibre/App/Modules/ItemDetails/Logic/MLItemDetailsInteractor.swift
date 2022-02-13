@@ -6,20 +6,29 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol MLItemDetailsBussinessLogic {
     func getDetails(id: String)
 }
 
 class MLItemDetailsInteractor: MLItemDetailsBussinessLogic {
-    private let presenter: MLItemDetailsPresentationLogic
+    private let _presenter: MLItemDetailsPresentationLogic
+    private let _worker: MLItemDetailsWorker
     
-    init(presenter: MLItemDetailsPresentationLogic) {
-        self.presenter = presenter
+    private let _disposeBag = DisposeBag()
+    
+    init(presenter: MLItemDetailsPresentationLogic, worker: MLItemDetailsWorker) {
+        self._presenter = presenter
+        self._worker = worker
     }
     
     func getDetails(id: String) {
-        // TODO: Create netowork worker
-        presenter.showDetails(ItemDetails(id: id))
+        _worker.fetchDetails(id: id)
+            .subscribe(onSuccess: { details in
+                print(details)
+            }, onFailure: { error in
+                print(error)
+            }).disposed(by: _disposeBag)
     }
 }

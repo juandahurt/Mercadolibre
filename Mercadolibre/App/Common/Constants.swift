@@ -10,4 +10,5 @@ import Foundation
 struct ApiService {
     static let baseUrl = "https://api.mercadolibre.com/"
     static let search = "sites/MLA/search"
+    static let details = "items"
 }

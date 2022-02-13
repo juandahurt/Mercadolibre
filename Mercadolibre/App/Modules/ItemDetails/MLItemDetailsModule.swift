@@ -15,7 +15,8 @@ class MLItemDetailsModule {
     private init(navigationController: UINavigationController, itemId: String) {
         router = MLItemDetailsRouter(navigationController: navigationController)
         let presenter = MLItemDetailsPresenter()
-        let interactor = MLItemDetailsInteractor(presenter: presenter)
+        let worker = MLItemDetailsNetworkWorker()
+        let interactor = MLItemDetailsInteractor(presenter: presenter, worker: worker)
         viewController = MLItemDetailsViewController(interactor: interactor, itemId: itemId)
         router.viewController = viewController
     }
