@@ -36,6 +36,21 @@ class MLSearchModuleTests: XCTestCase {
         let emptyCell = sut._collectionView.dataSource?.collectionView(sut._collectionView, cellForItemAt: .init(row: 0, section: 0))
         XCTAssert(emptyCell is SearchEmptyCollectionViewCell)
     }
+    
+    func test_show_error() {
+        let presenter = MLSearchPresenter()
+        let interactor = MockErrorSearchInteractor(presenter: presenter)
+        let sut = MLSearchViewController(interactor: interactor)
+        presenter.viewController = sut
+        
+        sut.loadViewIfNeeded()
+        
+        interactor.search("")
+        let numberOfItems = sut._collectionView.numberOfItems(inSection: 0)
+        XCTAssertEqual(numberOfItems, 1)
+        let emptyCell = sut._collectionView.dataSource?.collectionView(sut._collectionView, cellForItemAt: .init(row: 0, section: 0))
+        XCTAssert(emptyCell is SearchErrorCollectionViewCell)
+    }
 }
 
 
@@ -64,6 +79,21 @@ private class MockEmptySearchInteractor: MLSearchBussinessLogic {
     }
 }
 
+private class MockErrorSearchInteractor: MLSearchBussinessLogic {
+    let presenter: MLSearchPresentationLogic
+    
+    init(presenter: MLSearchPresentationLogic) {
+        self.presenter = presenter
+    }
+    
+    func search(_ text: String) {
+        self.presenter.showError(error: TestingSearchError.unknown)
+    }
+}
+
+internal enum TestingSearchError: Error {
+    case unknown
+}
 
 internal extension Item {
     static let empty = Item(id: "", title: "", thumbnail: "", price: 0)
