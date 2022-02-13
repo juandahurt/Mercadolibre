@@ -29,6 +29,6 @@ class MLSearchViewModel {
     }
     
     func getFormattedPrice() -> String {
-        "$ \(item.price)"
+        Util.toCurrency(from: item.price)
     }
 }

@@ -60,6 +60,8 @@
 		2F83371927B994CC00B52C6C /* MLItemDetailsPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F83371827B994CC00B52C6C /* MLItemDetailsPriceViewModel.swift */; };
 		2F9D2EE127B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D2EDF27B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.swift */; };
 		2F9D2EE227B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D2EE027B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.xib */; };
+		2F9D2EE827B9B85400F18307 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D2EE727B9B85400F18307 /* Util.swift */; };
+		2F9D2EEA27B9B97000F18307 /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D2EE927B9B97000F18307 /* UtilTests.swift */; };
 		2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */; };
 		2FAF89C927B72A1400756C98 /* MLLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89C827B72A1400756C98 /* MLLoggerTests.swift */; };
 		2FAF89D027B72D0900756C98 /* MLSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89CE27B72D0900756C98 /* MLSearchViewController.swift */; };
@@ -132,6 +134,8 @@
 		2F83371827B994CC00B52C6C /* MLItemDetailsPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLItemDetailsPriceViewModel.swift; sourceTree = "<group>"; };
 		2F9D2EDF27B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsBuyCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F9D2EE027B9A5D200F18307 /* ItemDetailsBuyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsBuyCollectionViewCell.xib; sourceTree = "<group>"; };
+		2F9D2EE727B9B85400F18307 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		2F9D2EE927B9B97000F18307 /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
 		2FAF89BD27B729CE00756C98 /* MercadolibreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadolibreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FAF89BF27B729CE00756C98 /* MercadolibreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadolibreTests.swift; sourceTree = "<group>"; };
 		2FAF89C827B72A1400756C98 /* MLLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLLoggerTests.swift; sourceTree = "<group>"; };
@@ -413,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				2F4F6D1927B72990000AB7C6 /* Logger */,
+				2F9D2EE727B9B85400F18307 /* Util.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				2FAF89C727B72A0300756C98 /* Logger */,
+				2F9D2EE927B9B97000F18307 /* UtilTests.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -773,6 +779,7 @@
 				2F56214627B8214C0076F42B /* MLSearchViewModel.swift in Sources */,
 				2F56212E27B7FDDC0076F42B /* NetworkMethod.swift in Sources */,
 				2F4F6D1D27B7299A000AB7C6 /* MLLogLevel.swift in Sources */,
+				2F9D2EE827B9B85400F18307 /* Util.swift in Sources */,
 				2F4F6D1E27B7299A000AB7C6 /* MLLogModifier.swift in Sources */,
 				2F56212C27B7FDAA0076F42B /* NetworkManager.swift in Sources */,
 				2F18C0A127B98C53005D545D /* ItemDetailsPriceCollectionViewCell.swift in Sources */,
@@ -815,6 +822,7 @@
 				2F18C06827B89F3E005D545D /* MLSearchModuleTests.swift in Sources */,
 				2F56213127B7FF2D0076F42B /* NetworkTests.swift in Sources */,
 				2FAF89C927B72A1400756C98 /* MLLoggerTests.swift in Sources */,
+				2F9D2EEA27B9B97000F18307 /* UtilTests.swift in Sources */,
 				2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

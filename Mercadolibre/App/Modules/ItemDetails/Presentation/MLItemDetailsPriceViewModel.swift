@@ -23,7 +23,7 @@ class MLItemDetailsPriceViewModel {
     }
     
     var price: String {
-        "$ \(details.price)"
+        Util.toCurrency(from: details.price)
     }
     
     var discount: String {
@@ -34,6 +34,6 @@ class MLItemDetailsPriceViewModel {
     
     var originalPrice: String {
         let originalPrice = details.originalPrice ?? 0
-        return "$ \(originalPrice)"
+        return Util.toCurrency(from: originalPrice)
     }
 }
