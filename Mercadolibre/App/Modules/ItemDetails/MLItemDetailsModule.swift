@@ -17,7 +17,7 @@ class MLItemDetailsModule {
         let presenter = MLItemDetailsPresenter()
         let worker = MLItemDetailsNetworkWorker()
         let interactor = MLItemDetailsInteractor(presenter: presenter, worker: worker)
-        viewController = MLItemDetailsViewController(interactor: interactor, itemId: itemId)
+        viewController = MLItemDetailsViewController(interactor: interactor, router: router, itemId: itemId)
         router.viewController = viewController
         presenter.viewController = viewController
     }

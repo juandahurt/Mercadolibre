@@ -10,6 +10,7 @@ import UIKit
 
 protocol MLItemDetailsRoutingLogic {
     func show()
+    func goBack()
 }
 
 class MLItemDetailsRouter: MLItemDetailsRoutingLogic {
@@ -26,5 +27,9 @@ class MLItemDetailsRouter: MLItemDetailsRoutingLogic {
         }
 
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func goBack() {
+        navigationController.popViewController(animated: true)
     }
 }

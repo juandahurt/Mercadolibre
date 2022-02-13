@@ -12,14 +12,16 @@ class MLItemDetailsViewController: UIViewController {
     
     private let _itemId: String
     private let _interactor: MLItemDetailsBussinessLogic
+    private let _router: MLItemDetailsRoutingLogic
     
     typealias DataSource = UICollectionViewDiffableDataSource<ItemDetailsSection, ItemDetailsSectionItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<ItemDetailsSection, ItemDetailsSectionItem>
     
     private var _dataSource: DataSource!
     
-    init(interactor: MLItemDetailsBussinessLogic, itemId: String) {
+    init(interactor: MLItemDetailsBussinessLogic, router: MLItemDetailsRoutingLogic, itemId: String) {
         self._interactor = interactor
+        self._router = router
         self._itemId = itemId
         
         let nibName = String(describing: Self.self)
@@ -43,6 +45,9 @@ class MLItemDetailsViewController: UIViewController {
         _interactor.getDetails(id: _itemId)
     }
     
+    @IBAction func backOnTap(_ sender: UIButton) {
+        _router.goBack()
+    }
 }
 
 // MARK: - Layout

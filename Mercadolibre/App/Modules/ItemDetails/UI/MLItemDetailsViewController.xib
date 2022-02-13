@@ -47,6 +47,9 @@
                                     <state key="normal" image="arrow.left" catalog="system">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="backOnTap:" destination="-1" eventType="touchUpInside" id="VCU-lU-Xc3"/>
+                                    </connections>
                                 </button>
                                 <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JD-QS-PeR">
                                     <rect key="frame" x="40" y="0.0" width="234" height="30"/>
