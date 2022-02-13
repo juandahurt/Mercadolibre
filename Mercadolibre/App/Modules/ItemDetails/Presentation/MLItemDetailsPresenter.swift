@@ -35,6 +35,14 @@ class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
                 ItemDetailsPriceItem(viewModel: MLItemDetailsPriceViewModel(details: data))
             ]
         )
-        viewController.applySnapshot(sections: [headerSection, photoSection, priceSection])
+        let buySection = ItemDetailsSection(items: [ItemDetailsBuyItem()])
+        viewController.applySnapshot(
+            sections: [
+                headerSection,
+                photoSection,
+                priceSection,
+                buySection
+            ]
+        )
     }
 }

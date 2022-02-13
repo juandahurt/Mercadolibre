@@ -62,6 +62,9 @@ extension MLItemDetailsViewController {
         let priceId = String(describing: ItemDetailsPriceCollectionViewCell.self)
         collectionView.register(UINib(nibName: priceId, bundle: nil), forCellWithReuseIdentifier: priceId)
         
+        let buyId = String(describing: ItemDetailsBuyCollectionViewCell.self)
+        collectionView.register(UINib(nibName: buyId, bundle: nil), forCellWithReuseIdentifier: buyId)
+        
         return DataSource(
             collectionView: collectionView) { collectionView, indexPath, item in
                 if let item = item as? ItemDetailsHeaderItem {
@@ -77,6 +80,11 @@ extension MLItemDetailsViewController {
                 if let item = item as? ItemDetailsPriceItem {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: priceId, for: indexPath) as? ItemDetailsPriceCollectionViewCell
                     cell?.setViewModel(item.viewModel)
+                    return cell
+                }
+                if let _ = item as? ItemDetailsBuyItem {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: buyId, for: indexPath) as? ItemDetailsBuyCollectionViewCell
+//                    cell?.setViewModel(item.viewModel)
                     return cell
                 }
                 
@@ -111,7 +119,7 @@ extension MLItemDetailsViewController {
                 section.contentInsets = .init(top: 15, leading: 16, bottom: 0, trailing: 16)
                 section.orthogonalScrollingBehavior = .groupPagingCentered
                 return section
-            } else {
+            } else if sectionIndex == 2 {
                 let size = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
                     heightDimension: .estimated(50)
@@ -120,6 +128,16 @@ extension MLItemDetailsViewController {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = .init(top: 10, leading: 16, bottom: 0, trailing: 16)
+                return section
+            } else {
+                let size = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1),
+                    heightDimension: .absolute(105)
+                )
+                let item = NSCollectionLayoutItem(layoutSize: size)
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = .init(top: 30, leading: 16, bottom: 0, trailing: 16)
                 return section
             }
         })

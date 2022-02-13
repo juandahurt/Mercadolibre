@@ -42,3 +42,5 @@ class ItemDetailsPriceItem: ItemDetailsSectionItem {
         self.viewModel = viewModel
     }
 }
+
+class ItemDetailsBuyItem: ItemDetailsSectionItem {}
