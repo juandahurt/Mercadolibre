@@ -147,6 +147,17 @@ extension MLSearchViewController: UICollectionViewDelegate {
             _router.showItem(identifiedBy: id)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard _dataSource.snapshot().sectionIdentifiers.count == 1 else { return }
+        
+        let section = _dataSource.snapshot().sectionIdentifiers[0]
+        guard section.items.contains(where: { $0 is SearchItemSuccess }) else { return }
+        
+        if indexPath.row == section.items.count - 1 {
+            _interactor.nextPage()
+        }
+    }
 }
 
 
