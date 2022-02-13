@@ -34,3 +34,11 @@ class ItemDetailsPhotoItem: ItemDetailsSectionItem {
         self.viewModel = viewModel
     }
 }
+
+class ItemDetailsPriceItem: ItemDetailsSectionItem {
+    let viewModel: MLItemDetailsPriceViewModel
+    
+    init(viewModel: MLItemDetailsPriceViewModel) {
+        self.viewModel = viewModel
+    }
+}

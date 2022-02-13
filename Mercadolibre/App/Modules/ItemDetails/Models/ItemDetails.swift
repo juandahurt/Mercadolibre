@@ -13,14 +13,17 @@ struct ItemDetails: Decodable {
     var condition: ItemCondition
     var soldQuantity: Int
     var pictures: [ItemPicture]
+    var price: Double
+    var originalPrice: Double?
     
     enum ContainerCodingKeys: CodingKey {
         case body
     }
     
     enum CodingKeys: String, CodingKey {
-        case id, title, condition, pictures
+        case id, title, condition, pictures, price
         case soldQuantity = "sold_quantity"
+        case originalPrice = "original_price"
     }
     
     init(from decoder: Decoder) throws {
@@ -31,6 +34,8 @@ struct ItemDetails: Decodable {
         condition = try dataContainer.decode(ItemCondition.self, forKey: .condition)
         pictures = try dataContainer.decode([ItemPicture].self, forKey: .pictures)
         soldQuantity = try dataContainer.decode(Int.self, forKey: .soldQuantity)
+        price = try dataContainer.decode(Double.self, forKey: .price)
+        originalPrice = try dataContainer.decodeIfPresent(Double.self, forKey: .originalPrice)
     }
 }
 

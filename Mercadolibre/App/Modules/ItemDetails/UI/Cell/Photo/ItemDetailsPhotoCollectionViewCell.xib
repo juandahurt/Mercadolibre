@@ -25,6 +25,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6a5-CL-5yG" secondAttribute="bottom" id="4nE-Av-gJL"/>
+                <constraint firstItem="6a5-CL-5yG" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="hIG-kF-Dtb"/>
                 <constraint firstAttribute="trailing" secondItem="6a5-CL-5yG" secondAttribute="trailing" id="mfw-W5-Jru"/>
                 <constraint firstItem="6a5-CL-5yG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xx0-sy-f4h"/>
                 <constraint firstItem="6a5-CL-5yG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zt8-tg-zMc"/>
