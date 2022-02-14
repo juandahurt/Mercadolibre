@@ -22,5 +22,8 @@ class SearchEmptyCollectionViewCell: UICollectionViewCell {
         _imageContainerView.layer.cornerRadius = _imageContainerView.frame.width / 2
         _titleLabel.text = "No encontramos publicaciones"
         _subtitleLabel.text = "Revisa que la palabra esté bien escrita. También puedes probar con menos términos o más generales."
+        
+        _titleLabel.font = AppStyle.Font.get(.medium, size: .title)
+        _subtitleLabel.font = AppStyle.Font.get(.regular, size: .body)
     }
 }
