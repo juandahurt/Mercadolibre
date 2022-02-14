@@ -84,6 +84,8 @@ private class MockSearchInteractor: MLSearchBussinessLogic {
     func search(_ text: String) {
         self.presenter.showSearchResult(items: Item.test)
     }
+    
+    func nextPage() {}
 }
 
 private class MockEmptySearchInteractor: MLSearchBussinessLogic {
@@ -96,6 +98,8 @@ private class MockEmptySearchInteractor: MLSearchBussinessLogic {
     func search(_ text: String) {
         self.presenter.showSearchResult(items: [])
     }
+    
+    func nextPage() {}
 }
 
 private class MockErrorSearchInteractor: MLSearchBussinessLogic {
@@ -108,6 +112,8 @@ private class MockErrorSearchInteractor: MLSearchBussinessLogic {
     func search(_ text: String) {
         self.presenter.showError(error: TestingSearchError.unknown)
     }
+    
+    func nextPage() {}
 }
 
 private class MockLoadingSearchInteractor: MLSearchBussinessLogic {
@@ -120,6 +126,8 @@ private class MockLoadingSearchInteractor: MLSearchBussinessLogic {
     func search(_ text: String) {
         self.presenter.showLoading()
     }
+    
+    func nextPage() {}
 }
 
 internal enum TestingSearchError: Error {

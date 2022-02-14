@@ -13,7 +13,7 @@ class NetworkTests: XCTestCase {
         let sut = NetworkManager(baseUrl: "wrong url!")
         sut.request { _, error in
             if let error = error as? NetworkError {
-                XCTAssert(error == .malformedUrl)
+                XCTAssert(error.localizedDescription == NetworkError.malformedUrl.localizedDescription)
             } else {
                 XCTFail("Wrong error thrown!")
             }
