@@ -65,6 +65,9 @@ extension MLItemDetailsViewController {
         let buyId = String(describing: ItemDetailsBuyCollectionViewCell.self)
         collectionView.register(UINib(nibName: buyId, bundle: nil), forCellWithReuseIdentifier: buyId)
         
+        let loadingId = String(describing: ItemDetailsLoadingCollectionViewCell.self)
+        collectionView.register(UINib(nibName: loadingId, bundle: nil), forCellWithReuseIdentifier: loadingId)
+        
         return DataSource(
             collectionView: collectionView) { collectionView, indexPath, item in
                 if let item = item as? ItemDetailsHeaderItem {
@@ -89,6 +92,10 @@ extension MLItemDetailsViewController {
                         
                         self._interactor.openItemLink(item.link)
                     }
+                    return cell
+                }
+                if item is ItemDetailsLoadingItem {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadingId, for: indexPath)
                     return cell
                 }
                 

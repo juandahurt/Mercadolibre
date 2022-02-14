@@ -50,3 +50,5 @@ class ItemDetailsBuyItem: ItemDetailsSectionItem {
         self.link = link
     }
 }
+
+class ItemDetailsLoadingItem: ItemDetailsSectionItem {}
