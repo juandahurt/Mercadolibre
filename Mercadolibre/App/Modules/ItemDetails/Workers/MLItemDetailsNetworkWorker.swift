@@ -13,6 +13,10 @@ protocol MLItemDetailsWorker {
 }
 
 class MLItemDetailsNetworkWorker: MLItemDetailsWorker {
+    deinit {
+        MLLogger.instance.log("details network worker is being deallocated", level: .debug)
+    }
+    
     func fetchDetails(id: String) -> Single<ItemDetails> {
         Single.create { single in
             let disposable = Disposables.create()
