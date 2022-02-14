@@ -2,8 +2,6 @@
 
 This repository contains my Mercadolibre iOS challenge solution.
 
-## Modules
-
 At a firce glance, the first idea that came out to my mind was using the VIPER architecture. But, its bidirectional links that it has just seemed unnecessary.
 That's why this app was made using the VIP Clean architecture.
 
@@ -23,7 +21,7 @@ If wee see the architecture as a set of layers, we have the following:
 
 *Note: weak references are used to avoid memory leaks produced by reference cycles.*
 
-### Search module
+## Search module
 
 | Name | Screenshot |
 | --- | --- |
@@ -36,7 +34,11 @@ If wee see the architecture as a set of layers, we have the following:
 
 <img width="650" alt="Screen Shot 2022-02-14 at 10 58 19 AM" src="https://user-images.githubusercontent.com/26754335/153923492-2cd1d816-8304-429c-86cd-b63f20e62254.png">
 
-### Item details module
+## Item details module
+
+| Name | Screenshot |
+| --- | --- |
+| Item details | <img width="250" alt="" src="https://user-images.githubusercontent.com/26754335/153933255-bd117eb4-86d4-4169-acae-d2ccb0d0ac60.png"> |
 
 #### Test coverage
 
