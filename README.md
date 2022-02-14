@@ -23,13 +23,21 @@ If wee see the architecture as a set of layers, we have the following:
 
 *Note: weak references are used to avoid memory leaks produced by reference cycles.*
 
-### Unit testing
+### Search module
 
-#### Search module test coverage
+| Name | Screenshot |
+| --- | --- |
+| Loading view | <img width="250" alt="Screen Shot 2022-02-14 at 12 55 30 PM" src="https://user-images.githubusercontent.com/26754335/153927645-a1275c1b-f274-4e02-9e10-638721698004.png"> |
+| Empty search | <img width="250" alt="Screen Shot 2022-02-14 at 12 55 30 PM" src="https://user-images.githubusercontent.com/26754335/153927384-d5cfb237-b9a4-43ec-bb54-a36ef41f3d10.png"> |
+| Error view | <img width="250" alt="Screen Shot 2022-02-14 at 12 55 30 PM" src="https://user-images.githubusercontent.com/26754335/153932717-3bbf866a-1e60-45d1-8c8f-80b61901df8d.png"> |
+| Search result | <img width="250" alt="Screen Shot 2022-02-14 at 12 55 30 PM" src="https://user-images.githubusercontent.com/26754335/153932032-5b61e9bc-82b8-4a77-baff-03c80e468795.png"> |
+
+#### Test coverage
 
 <img width="650" alt="Screen Shot 2022-02-14 at 10 58 19 AM" src="https://user-images.githubusercontent.com/26754335/153923492-2cd1d816-8304-429c-86cd-b63f20e62254.png">
 
+### Item details module
 
-#### Item details module test coverage
+#### Test coverage
 
 <img width="650" alt="Screen Shot 2022-02-14 at 10 58 49 AM" src="https://user-images.githubusercontent.com/26754335/153923081-476bfa2d-9e42-4b88-a1b1-5ca27c40f7af.png">
