@@ -23,6 +23,21 @@ class MLSearchModuleTests: XCTestCase {
         XCTAssertEqual(numberOfItemsInScreen, Item.test.count)
     }
     
+    func test_presents_next_page_items() {
+        let presenter = MLSearchPresenter()
+        let interactor = MockSearchInteractor(presenter: presenter)
+        let router = MLSearchRouter(navigationController: UINavigationController())
+        let sut = MLSearchViewController(interactor: interactor, router: router)
+        presenter.viewController = sut
+        
+        sut.loadViewIfNeeded()
+        
+        interactor.search("")
+        interactor.nextPage()
+        let numberOfItemsInScreen = sut._collectionView.numberOfItems(inSection: 0)
+        XCTAssertEqual(numberOfItemsInScreen, (Item.test + Item.test).count)
+    }
+    
     func test_show_empty_result() {
         let presenter = MLSearchPresenter()
         let interactor = MockEmptySearchInteractor(presenter: presenter)
@@ -85,7 +100,9 @@ private class MockSearchInteractor: MLSearchBussinessLogic {
         self.presenter.showSearchResult(items: Item.test)
     }
     
-    func nextPage() {}
+    func nextPage() {
+        self.presenter.showSearchResult(items: Item.test + Item.test)
+    }
 }
 
 private class MockEmptySearchInteractor: MLSearchBussinessLogic {
