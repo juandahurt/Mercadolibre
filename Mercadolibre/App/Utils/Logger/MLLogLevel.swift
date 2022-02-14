@@ -8,5 +8,5 @@
 import Foundation
 
 enum MLLogLevel {
-    case debug, info
+    case debug, info, deallocation
 }

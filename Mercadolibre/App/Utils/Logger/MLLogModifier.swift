@@ -22,6 +22,8 @@ class EmojiLogModifier: MLLogModifier {
         switch level {
         case .debug:
             return "🐛"
+        case .deallocation:
+            return "🗑"
         case .info:
             return "ℹ️"
         }

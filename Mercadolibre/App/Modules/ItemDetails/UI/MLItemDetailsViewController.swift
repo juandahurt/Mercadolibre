@@ -33,7 +33,7 @@ class MLItemDetailsViewController: UIViewController {
     }
     
     deinit {
-        MLLogger.instance.log("details view is being deallocated", level: .debug)
+        MLLogger.instance.log("details view is being deallocated", level: .deallocation)
     }
     
     override func viewDidLoad() {
@@ -68,8 +68,9 @@ extension MLItemDetailsViewController {
         let loadingId = String(describing: ItemDetailsLoadingCollectionViewCell.self)
         collectionView.register(UINib(nibName: loadingId, bundle: nil), forCellWithReuseIdentifier: loadingId)
         
-        return DataSource(
-            collectionView: collectionView) { collectionView, indexPath, item in
+        return DataSource(collectionView: collectionView) { [weak self] collectionView, indexPath, item in
+                guard let self = self else { return nil }
+            
                 if let item = item as? ItemDetailsHeaderItem {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: headerId, for: indexPath) as? ItemDetailsHeaderCollectionViewCell
                     cell?.setViewModel(item.viewModel)
