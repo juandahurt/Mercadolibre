@@ -40,6 +40,17 @@ struct ItemDetails: Decodable {
         originalPrice = try dataContainer.decodeIfPresent(Double.self, forKey: .originalPrice)
         permalink = try dataContainer.decode(String.self, forKey: .permalink)
     }
+    
+    init(id: String, title: String, condition: ItemCondition, pictures: [ItemPicture], soldQuantity: Int, price: Double, originalPrice: Double?, permalink: String) {
+        self.id = id
+        self.title = title
+        self.condition = condition
+        self.pictures = pictures
+        self.soldQuantity = soldQuantity
+        self.price = price
+        self.originalPrice = originalPrice
+        self.permalink = permalink
+    }
 }
 
 enum ItemCondition: String, Decodable {
