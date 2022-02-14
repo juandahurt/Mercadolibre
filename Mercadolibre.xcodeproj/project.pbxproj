@@ -70,6 +70,7 @@
 		2FAF89D027B72D0900756C98 /* MLSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89CE27B72D0900756C98 /* MLSearchViewController.swift */; };
 		2FAF89D127B72D0900756C98 /* MLSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FAF89CF27B72D0900756C98 /* MLSearchViewController.xib */; };
 		2FAF89D427B72FDF00756C98 /* MLSearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAF89D327B72FDF00756C98 /* MLSearchModule.swift */; };
+		2FFA416427BAA87700201341 /* MLItemDetailsModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA416327BAA87700201341 /* MLItemDetailsModuleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		2FAF89CE27B72D0900756C98 /* MLSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchViewController.swift; sourceTree = "<group>"; };
 		2FAF89CF27B72D0900756C98 /* MLSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MLSearchViewController.xib; sourceTree = "<group>"; };
 		2FAF89D327B72FDF00756C98 /* MLSearchModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchModule.swift; sourceTree = "<group>"; };
+		2FFA416327BAA87700201341 /* MLItemDetailsModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLItemDetailsModuleTests.swift; sourceTree = "<group>"; };
 		B22CF799FF4011A691795644 /* Pods_Mercadolibre.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mercadolibre.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0C1B6EC592CB8D37C43920 /* Pods-Mercadolibre.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercadolibre.debug.xcconfig"; path = "Target Support Files/Pods-Mercadolibre/Pods-Mercadolibre.debug.xcconfig"; sourceTree = "<group>"; };
 		CFC8682C4FCB7E9ADD1A417E /* Pods-MercadolibreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadolibreTests.debug.xcconfig"; path = "Target Support Files/Pods-MercadolibreTests/Pods-MercadolibreTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		2F18C06527B89F18005D545D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2FFA416227BAA76F00201341 /* ItemDetails */,
 				2F18C06627B89F20005D545D /* Search */,
 			);
 			path = Modules;
@@ -591,6 +594,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		2FFA416227BAA76F00201341 /* ItemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2FFA416327BAA87700201341 /* MLItemDetailsModuleTests.swift */,
+			);
+			path = ItemDetails;
+			sourceTree = "<group>";
+		};
 		939468F09BFD13C17D9F7770 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,6 +854,7 @@
 				2F56213127B7FF2D0076F42B /* NetworkTests.swift in Sources */,
 				2FAF89C927B72A1400756C98 /* MLLoggerTests.swift in Sources */,
 				2F9D2EEA27B9B97000F18307 /* UtilTests.swift in Sources */,
+				2FFA416427BAA87700201341 /* MLItemDetailsModuleTests.swift in Sources */,
 				2FAF89C027B729CE00756C98 /* MercadolibreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
