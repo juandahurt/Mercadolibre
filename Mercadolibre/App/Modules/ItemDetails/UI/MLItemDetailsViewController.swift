@@ -33,7 +33,7 @@ class MLItemDetailsViewController: UIViewController {
     }
     
     deinit {
-        MLLogger.instance.log("details view is being deallocated", level: .debug)
+        MLLogger.instance.log("details view is being deallocated", level: .deallocation)
     }
     
     override func viewDidLoad() {

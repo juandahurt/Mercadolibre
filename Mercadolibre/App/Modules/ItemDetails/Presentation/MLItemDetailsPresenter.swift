@@ -16,7 +16,7 @@ class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
     weak var viewController: MLItemDetailsViewController?
     
     deinit {
-        MLLogger.instance.log("details presenter is being deallocated", level: .debug)
+        MLLogger.instance.log("details presenter is being deallocated", level: .deallocation)
     }
     
     func showLoading() {

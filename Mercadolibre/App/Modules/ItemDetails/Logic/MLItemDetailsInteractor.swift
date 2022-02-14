@@ -25,7 +25,7 @@ class MLItemDetailsInteractor: MLItemDetailsBussinessLogic {
     }
     
     deinit {
-        MLLogger.instance.log("details interactor is being deallocated", level: .debug)
+        MLLogger.instance.log("details interactor is being deallocated", level: .deallocation)
     }
     
     func getDetails(id: String) {

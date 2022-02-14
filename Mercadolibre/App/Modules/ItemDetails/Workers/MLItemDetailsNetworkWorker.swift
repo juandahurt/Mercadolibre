@@ -14,7 +14,7 @@ protocol MLItemDetailsWorker {
 
 class MLItemDetailsNetworkWorker: MLItemDetailsWorker {
     deinit {
-        MLLogger.instance.log("details network worker is being deallocated", level: .debug)
+        MLLogger.instance.log("details network worker is being deallocated", level: .deallocation)
     }
     
     func fetchDetails(id: String) -> Single<ItemDetails> {
