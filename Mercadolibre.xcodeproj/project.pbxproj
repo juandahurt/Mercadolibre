@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2DEADFBD4E6D55FEF9520939 /* Pods_Mercadolibre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22CF799FF4011A691795644 /* Pods_Mercadolibre.framework */; };
 		2EAA589CD40D77A9984E6F27 /* Pods_MercadolibreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB938BC7C1350DFD56E14 /* Pods_MercadolibreTests.framework */; };
+		2F0AEFFB27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0AEFF927BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.swift */; };
+		2F0AEFFC27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F0AEFFA27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.xib */; };
 		2F18C06827B89F3E005D545D /* MLSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */; };
 		2F18C06D27B95592005D545D /* MLSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18C06C27B95592005D545D /* MLSearchRouter.swift */; };
 		2F18C07027B9585B005D545D /* MLItemDetailsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18C06F27B9585B005D545D /* MLItemDetailsModule.swift */; };
@@ -82,6 +84,8 @@
 
 /* Begin PBXFileReference section */
 		0F6C5504CF2486A3760B164A /* Pods-Mercadolibre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mercadolibre.release.xcconfig"; path = "Target Support Files/Pods-Mercadolibre/Pods-Mercadolibre.release.xcconfig"; sourceTree = "<group>"; };
+		2F0AEFF927BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsLoadingCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F0AEFFA27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetailsLoadingCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F18C06727B89F3E005D545D /* MLSearchModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchModuleTests.swift; sourceTree = "<group>"; };
 		2F18C06C27B95592005D545D /* MLSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSearchRouter.swift; sourceTree = "<group>"; };
 		2F18C06F27B9585B005D545D /* MLItemDetailsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLItemDetailsModule.swift; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0AEFF827BA980100803B66 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				2F0AEFF927BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.swift */,
+				2F0AEFFA27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.xib */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		2F18C06527B89F18005D545D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +279,7 @@
 		2F18C08527B96E9C005D545D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				2F0AEFF827BA980100803B66 /* Loading */,
 				2F9D2EDE27B9A5BF00F18307 /* Buy */,
 				2F18C09E27B98C3C005D545D /* Price */,
 				2F18C09727B97CA0005D545D /* Photo */,
@@ -683,6 +697,7 @@
 			files = (
 				2F4F6CF427B72011000AB7C6 /* LaunchScreen.storyboard in Resources */,
 				2FAF89D127B72D0900756C98 /* MLSearchViewController.xib in Resources */,
+				2F0AEFFC27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.xib in Resources */,
 				2F26F3C427B838A700982FFC /* SearchEmptyCollectionViewCell.xib in Resources */,
 				2F18C09B27B97CB0005D545D /* ItemDetailsPhotoCollectionViewCell.xib in Resources */,
 				2F26F3BF27B8346B00982FFC /* SearchLoadingCollectionViewCell.xib in Resources */,
@@ -776,6 +791,7 @@
 			files = (
 				2F18C08F27B97524005D545D /* ItemDetailsSectionItem.swift in Sources */,
 				2F18C09A27B97CB0005D545D /* ItemDetailsPhotoCollectionViewCell.swift in Sources */,
+				2F0AEFFB27BA981500803B66 /* ItemDetailsLoadingCollectionViewCell.swift in Sources */,
 				2F4F6CE827B72010000AB7C6 /* AppDelegate.swift in Sources */,
 				2F18C09D27B9845A005D545D /* MLItemDetailsPictureViewModel.swift in Sources */,
 				2F18C08D27B97512005D545D /* ItemDetailsSection.swift in Sources */,

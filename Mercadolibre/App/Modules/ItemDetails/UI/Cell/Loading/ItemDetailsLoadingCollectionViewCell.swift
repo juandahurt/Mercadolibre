@@ -1,19 +1,19 @@
 //
-//  SearchLoadingCollectionViewCell.swift
+//  ItemDetailsLoadingCollectionViewCell.swift
 //  Mercadolibre
 //
-//  Created by Juan Hurtado on 12/02/22.
+//  Created by Juan Hurtado on 14/02/22.
 //
 
 import NVActivityIndicatorView
 import UIKit
 
-class SearchLoadingCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var _loaderView: NVActivityIndicatorView!
+class ItemDetailsLoadingCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var _loaderView: NVActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+       
         _setup()
     }
     

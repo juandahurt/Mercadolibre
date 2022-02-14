@@ -22,5 +22,8 @@ class SearchErrorCollectionViewCell: UICollectionViewCell {
         _imageContainerView.layer.cornerRadius = _imageContainerView.frame.width / 2
         _titleLabel.text = "Lo sentimos."
         _descriptionLabel.text = "Parece que ha ocurrido un error. \nPor favor, intenta más tarde."
+        
+        _titleLabel.font = AppStyle.Font.get(.medium, size: .title)
+        _descriptionLabel.font = AppStyle.Font.get(.regular, size: .body)
     }
 }

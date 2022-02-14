@@ -55,6 +55,14 @@ class NetworkManager {
                 return
             }
             
+            if let response = response as? HTTPURLResponse {
+                if !(200..<300).contains(response.statusCode) {
+                    MLLogger.instance.log("network manager: status code error has occured!", level: .debug)
+                    completion(nil, NetworkError.statusCode(response.statusCode ))
+                    return
+                }
+            }
+            
             if let data = data {
                 completion(data, nil)
                 return

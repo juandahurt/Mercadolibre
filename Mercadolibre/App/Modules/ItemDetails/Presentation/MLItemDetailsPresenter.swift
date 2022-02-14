@@ -8,11 +8,20 @@
 import Foundation
 
 protocol MLItemDetailsPresentationLogic {
+    func showLoading()
     func showDetails(_ data: ItemDetails)
 }
 
 class MLItemDetailsPresenter: MLItemDetailsPresentationLogic {
     weak var viewController: MLItemDetailsViewController?
+    
+    func showLoading() {
+        let emptySection = ItemDetailsSection(items: [])
+        let loadingSection = ItemDetailsSection(
+            items: [ ItemDetailsLoadingItem() ]
+        )
+        viewController?.applySnapshot(sections: [emptySection, loadingSection])
+    }
     
     func showDetails(_ data: ItemDetails) {
         guard let viewController = viewController else {
